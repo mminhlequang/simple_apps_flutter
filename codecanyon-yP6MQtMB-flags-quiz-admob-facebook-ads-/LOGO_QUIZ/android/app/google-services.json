@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "945917338349",
+    "project_id": "flutter-b14e6",
+    "storage_bucket": "flutter-b14e6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:945917338349:android:f2a138f2418634a466a2e4",
+        "android_client_info": {
+          "package_name": "com.egylab.flutter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDj4mZpJgt-T_V_IaHDC1A4vo31fZ_iXQI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
