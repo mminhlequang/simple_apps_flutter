@@ -1,19 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:device_preview/device_preview.dart';
-import 'package:onesignal_flutter/onesignal_flutter.dart';
 
 import 'AdHelper.dart';
 import 'HomeScreen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  MobileAds.instance.initialize();
 
-  AdHelper.loadOpenAd().then((_) {
-    AdHelper.showOpenAdIfAvailable();
-  });
-  OneSignal.initialize('2b8b183c-9b22-416e-b2d1-f9bfe907afc7');
+  // AdHelper.loadOpenAd().then((_) {
+  //   AdHelper.showOpenAdIfAvailable();
+  // });
+  // OneSignal.initialize('2b8b183c-9b22-416e-b2d1-f9bfe907afc7');
 
   // Optional settings for handling notifications and in-app messages
   // OneSignal.shared

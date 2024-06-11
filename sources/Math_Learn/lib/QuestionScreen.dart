@@ -1,6 +1,5 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'AdHelper.dart';
 import 'AnimatedBubblesBackground.dart';
 import 'HomeScreen.dart';
@@ -125,11 +124,11 @@ class _QuestionScreenState extends State<QuestionScreen> {
           ),
         ],
       ),
-      bottomNavigationBar: Container(
-        width: MediaQuery.of(context).size.width,
-        height: AdSize.banner.height.toDouble(),
-        child: AdHelper.bannerAd(),
-      ),
+      // bottomNavigationBar: Container(
+      //   width: MediaQuery.of(context).size.width,
+      //   height: AdSize.banner.height.toDouble(),
+      //   child: AdHelper.bannerAd(),
+      // ),
     );
   }
 

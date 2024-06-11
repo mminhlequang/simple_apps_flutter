@@ -55,21 +55,21 @@ class MainDrawer extends StatelessWidget {
               title: 'About Us',
               textColor: Colors.orange,
               children: [
-                _buildListTile('Developer: Egylab'),
+                _buildListTile('Developer: MinhMinh'),
                 _buildListTile(
-                  'Email: egylabapps@gmail.com',
+                  'Email: mminh.lequang.dev@gmail.com',
                   onTap: () {
                     Navigator.pop(context);
-                    launch('mailto:egylabapps@gmail.com');
+                    launch('mailto:mminh.lequang.dev@gmail.com');
                   },
                 ),
-                _buildListTile(
-                  'Phone: +201501549825',
-                  onTap: () {
-                    Navigator.pop(context);
-                    launch('tel:+201501549825');
-                  },
-                ),
+                // _buildListTile(
+                //   'Phone: +201501549825',
+                //   onTap: () {
+                //     Navigator.pop(context);
+                //     launch('tel:+201501549825');
+                //   },
+                // ),
               ],
             ),
             _buildCardExpansionTile(
@@ -107,16 +107,7 @@ class MainDrawer extends StatelessWidget {
                 ),
               ],
             ),
-            _buildCardListTile(
-              icon: Icons.apps,
-              title: 'More Apps',
-              textColor: Colors.orange,
-              onTap: () {
-                Navigator.pop(context);
-                launch(
-                    'https://play.google.com/store/apps/dev?id=73140361695297197');
-              },
-            ),
+             
             _buildCardListTile(
               icon: Icons.star,
               title: 'Rate Us',

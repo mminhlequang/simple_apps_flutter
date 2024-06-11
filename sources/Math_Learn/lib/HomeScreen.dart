@@ -1,7 +1,6 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:mathlearn/MainDrawer.dart';
 
 import 'AdHelper.dart';
@@ -36,11 +35,11 @@ class HomeScreen extends StatelessWidget {
         
         ],
       ),
-      bottomNavigationBar: Container(
-        width: MediaQuery.of(context).size.width,
-        height: AdSize.banner.height.toDouble(),
-        child: AdHelper.bannerAd(), // Include the banner ad widget here
-      ),
+      // bottomNavigationBar: Container(
+      //   width: MediaQuery.of(context).size.width,
+      //   height: AdSize.banner.height.toDouble(),
+      //   child: AdHelper.bannerAd(), // Include the banner ad widget here
+      // ),
     );
   }
 }

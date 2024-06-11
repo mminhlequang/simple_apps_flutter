@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 class AdHelper {
   static bool useAdMob = true; // Set to false to use Facebook ads
@@ -29,7 +28,7 @@ class AdHelper {
   static Widget bannerAd() {
     if (useAdMob) {
       return SizedBox();
-      return adMobBannerAd();
+      // return adMobBannerAd();
     } else {
       return SizedBox();
     }
@@ -46,52 +45,52 @@ class AdHelper {
   // Other ad methods...
 
   // AdMob Banner Ad
-  static Widget adMobBannerAd() {
-    BannerAd bannerAd = BannerAd(
-      adUnitId: "ca-app-pub-3940256099942544/6300978111",
-      size: AdSize.banner,
-      request: const AdRequest(),
-      listener: BannerAdListener(
-        onAdLoaded: (_) {
-          print('AdMob banner ad loaded successfully');
-        },
-        onAdFailedToLoad: (ad, error) {
-          print('AdMob banner ad failed to load: $error');
-        },
-      ),
-    )..load();
+//   static Widget adMobBannerAd() {
+//     BannerAd bannerAd = BannerAd(
+//       adUnitId: "ca-app-pub-3940256099942544/6300978111",
+//       size: AdSize.banner,
+//       request: const AdRequest(),
+//       listener: BannerAdListener(
+//         onAdLoaded: (_) {
+//           print('AdMob banner ad loaded successfully');
+//         },
+//         onAdFailedToLoad: (ad, error) {
+//           print('AdMob banner ad failed to load: $error');
+//         },
+//       ),
+//     )..load();
 
-    return AdWidget(ad: bannerAd);
-  }
+//     return AdWidget(ad: bannerAd);
+//   }
 
-// App Open Ad
-  static String get openAdUnitId {
-    if (Platform.isAndroid) {
-      return 'ca-app-pub-3940256099942544/9257395921';
-    } else if (Platform.isIOS) {
-      return '<YOUR_IOS_OPEN_AD_UNIT_ID>';
-    } else {
-      throw UnsupportedError('Unsupported platform');
-    }
-  }
+// // App Open Ad
+//   static String get openAdUnitId {
+//     if (Platform.isAndroid) {
+//       return 'ca-app-pub-3940256099942544/9257395921';
+//     } else if (Platform.isIOS) {
+//       return '<YOUR_IOS_OPEN_AD_UNIT_ID>';
+//     } else {
+//       throw UnsupportedError('Unsupported platform');
+//     }
+//   }
 
-  static Future<void> loadOpenAd() async {
-    final AppOpenAdLoadCallback loadCallback = AppOpenAdLoadCallback(
-      onAdLoaded: (AppOpenAd ad) {
-        // Ad loaded successfully, you can now show the ad when appropriate.
-        ad.show();
-      },
-      onAdFailedToLoad: (LoadAdError error) {
-        print('Open ad failed to load: $error');
-      },
-    );
+//   static Future<void> loadOpenAd() async {
+//     final AppOpenAdLoadCallback loadCallback = AppOpenAdLoadCallback(
+//       onAdLoaded: (AppOpenAd ad) {
+//         // Ad loaded successfully, you can now show the ad when appropriate.
+//         ad.show();
+//       },
+//       onAdFailedToLoad: (LoadAdError error) {
+//         print('Open ad failed to load: $error');
+//       },
+//     );
 
-    AppOpenAd.load(
-      adUnitId: openAdUnitId,
-      request: const AdRequest(),
-      adLoadCallback: loadCallback,
-    );
-  }
+//     AppOpenAd.load(
+//       adUnitId: openAdUnitId,
+//       request: const AdRequest(),
+//       adLoadCallback: loadCallback,
+//     );
+//   }
 
   static void showOpenAdIfAvailable() {
     if (useAdMob) {
@@ -104,20 +103,20 @@ class AdHelper {
   }
 
   // AdMob Interstitial Ad
-  static void showAdMobInterstitialAd() {
-    InterstitialAd.load(
-      adUnitId: 'ca-app-pub-3940256099942544/1033173712',
-      request: const AdRequest(),
-      adLoadCallback: InterstitialAdLoadCallback(
-        onAdLoaded: (ad) {
-          ad.show();
-        },
-        onAdFailedToLoad: (error) {
-          print('AdMob Interstitial failed to load: $error');
-        },
-      ),
-    );
-  }
+  // static void showAdMobInterstitialAd() {
+  //   InterstitialAd.load(
+  //     adUnitId: 'ca-app-pub-3940256099942544/1033173712',
+  //     request: const AdRequest(),
+  //     adLoadCallback: InterstitialAdLoadCallback(
+  //       onAdLoaded: (ad) {
+  //         ad.show();
+  //       },
+  //       onAdFailedToLoad: (error) {
+  //         print('AdMob Interstitial failed to load: $error');
+  //       },
+  //     ),
+  //   );
+  // }
 }
 
 
