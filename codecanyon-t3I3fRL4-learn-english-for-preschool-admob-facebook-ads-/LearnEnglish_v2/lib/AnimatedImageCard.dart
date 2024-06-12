@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import 'dart:async';
 
@@ -82,11 +81,11 @@ class _WordsPageState extends State<WordsPage> {
           }
         },
       ),
-      bottomNavigationBar: Container(
-        width: MediaQuery.of(context).size.width,
-        height: AdSize.banner.height.toDouble(),
-        child: AdHelper.bannerAd(), // Include the banner ad widget here
-      ),
+      // bottomNavigationBar: Container(
+      //   width: MediaQuery.of(context).size.width,
+      //   height: AdSize.banner.height.toDouble(),
+      //   child: AdHelper.bannerAd(), // Include the banner ad widget here
+      // ),
     );
   }
 

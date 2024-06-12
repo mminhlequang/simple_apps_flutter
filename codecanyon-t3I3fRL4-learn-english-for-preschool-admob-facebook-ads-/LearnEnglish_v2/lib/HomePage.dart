@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:languageleran/AdHelper.dart';
 import 'package:languageleran/AnimatedImageCard.dart';
 
@@ -524,11 +523,11 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      bottomNavigationBar: Container(
-        width: MediaQuery.of(context).size.width,
-        height: AdSize.banner.height.toDouble(),
-        child: AdHelper.bannerAd(), // Include the banner ad widget here
-      ),
+      // bottomNavigationBar: Container(
+      //   width: MediaQuery.of(context).size.width,
+      //   height: AdSize.banner.height.toDouble(),
+      //   child: AdHelper.bannerAd(), // Include the banner ad widget here
+      // ),
     );
   }
 }
@@ -550,9 +549,7 @@ class CategoryButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        padding: const EdgeInsets.all(16.0),
-        primary: Colors.white, // Set a playful color
-        onPrimary: Colors.purpleAccent,
+        foregroundColor: Colors.purpleAccent, backgroundColor: Colors.white, padding: const EdgeInsets.all(16.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(
               10.0), // Adjust the value for the desired shape

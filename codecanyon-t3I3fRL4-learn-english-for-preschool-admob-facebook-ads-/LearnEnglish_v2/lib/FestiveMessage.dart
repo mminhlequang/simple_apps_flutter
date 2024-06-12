@@ -47,7 +47,7 @@ class FestiveMessage extends StatelessWidget {
                 );
               },
               style: ElevatedButton.styleFrom(
-                primary: Colors.blueAccent,
+                backgroundColor: Colors.blueAccent,
                 padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
