@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
         AdHelper.handleClick();
       },
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         locale: DevicePreview.locale(context), // <- Add the locale
         builder: DevicePreview.appBuilder, // <- Add the builder
         initialRoute: '/',
