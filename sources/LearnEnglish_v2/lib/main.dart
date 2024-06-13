@@ -24,8 +24,7 @@ Future<void> main() async {
   // Initialize OneSignal
 
   runApp(
-      MyApp(),
-   
+    MyApp(),
   );
 }
 
@@ -37,6 +36,7 @@ class MyApp extends StatelessWidget {
           AdHelper.handleClick();
         },
         child: MaterialApp(
+          debugShowCheckedModeBanner: false,
           home: HomePage(),
         ));
   }
