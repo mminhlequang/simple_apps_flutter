@@ -1,4 +1,4 @@
-package com.egylab.flutter
+package com.app.slanguagelearn
 
 import io.flutter.embedding.android.FlutterActivity
 

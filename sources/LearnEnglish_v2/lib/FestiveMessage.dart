@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:languageleran/HomePage.dart';
+import 'package:slanguagelearn/HomePage.dart';
 import 'package:lottie/lottie.dart';
 
 class FestiveMessage extends StatelessWidget {

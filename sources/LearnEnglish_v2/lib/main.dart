@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:device_preview/device_preview.dart';
 
 import 'AdHelper.dart';
 import 'HomePage.dart';
@@ -25,10 +24,8 @@ Future<void> main() async {
   // Initialize OneSignal
 
   runApp(
-    DevicePreview(
-      enabled: false, // Disable in production
-      builder: (context) => MyApp(),
-    ),
+      MyApp(),
+   
   );
 }
 
@@ -40,8 +37,6 @@ class MyApp extends StatelessWidget {
           AdHelper.handleClick();
         },
         child: MaterialApp(
-          locale: DevicePreview.locale(context), // <- Add the locale
-          builder: DevicePreview.appBuilder,
           home: HomePage(),
         ));
   }

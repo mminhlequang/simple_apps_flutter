@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:languageleran/AdHelper.dart';
-import 'package:languageleran/AnimatedImageCard.dart';
+import 'package:slanguagelearn/AdHelper.dart';
+import 'package:slanguagelearn/AnimatedImageCard.dart';
 
 import 'MainDrawer.dart';
 
@@ -549,7 +549,9 @@ class CategoryButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        foregroundColor: Colors.purpleAccent, backgroundColor: Colors.white, padding: const EdgeInsets.all(16.0),
+        foregroundColor: Colors.purpleAccent,
+        backgroundColor: Colors.white,
+        padding: const EdgeInsets.all(16.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(
               10.0), // Adjust the value for the desired shape
