@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:slanguagelearn/AdHelper.dart';
-import 'package:slanguagelearn/AnimatedImageCard.dart';
+import 'package:skidsenglish/AdHelper.dart';
+import 'package:skidsenglish/AnimatedImageCard.dart';
 
 import 'MainDrawer.dart';
 

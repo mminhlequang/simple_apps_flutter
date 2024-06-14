@@ -1,4 +1,4 @@
-package com.app.slanguagelearn
+package com.app.skidsenglish
 
 import io.flutter.embedding.android.FlutterActivity
 
