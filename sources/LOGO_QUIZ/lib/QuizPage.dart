@@ -13,7 +13,6 @@ import 'dart:ui' as ui;
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:screenshot/screenshot.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:share/share.dart';
 
@@ -47,7 +46,6 @@ class _QuizPageState extends State<QuizPage> {
   bool? isAnswerCorrect;
 
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-  final ScreenshotController _screenshotController = ScreenshotController();
 
   @override
   void initState() {
@@ -126,20 +124,18 @@ class _QuizPageState extends State<QuizPage> {
         quizLogic: quizLogic,
         // Add Share button to the app bar actions
         actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 30),
-            child: IconButton(
-              icon: Lottie.asset(
-                'assets/images/home/share.json', // Replace with the path to your Lottie file
-              ),
-              onPressed: _shareQuizScreenshot,
-            ),
-          ),
+          // Padding(
+          //   padding: const EdgeInsets.only(right: 30),
+          //   child: IconButton(
+          //     icon: Lottie.asset(
+          //       'assets/images/home/share.json', // Replace with the path to your Lottie file
+          //     ),
+          //     onPressed: _shareQuizScreenshot,
+          //   ),
+          // ),
         ],
       ),
-      body: Screenshot(
-        controller: _screenshotController,
-        child: AnimatedContainer(
+      body:   AnimatedContainer(
           duration: const Duration(seconds: 1),
           decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -333,7 +329,7 @@ class _QuizPageState extends State<QuizPage> {
               ],
             ),
           ),
-        ),
+         
       ),
       // bottomNavigationBar: Container(
       //   width: MediaQuery.of(context).size.width,
@@ -343,48 +339,48 @@ class _QuizPageState extends State<QuizPage> {
     );
   }
 
-  Future<void> _shareQuizScreenshot() async {
-    try {
-      // Capture the screenshot as an Uint8List
-      Uint8List? imageBytes = await _screenshotController.capture();
+  // Future<void> _shareQuizScreenshot() async {
+  //   try {
+  //     // Capture the screenshot as an Uint8List
+  //     Uint8List? imageBytes = await _screenshotController.capture();
 
-      if (imageBytes != null) {
-        // Convert Uint8List to Image
-        ui.Image image = await _convertImage(imageBytes);
+  //     if (imageBytes != null) {
+  //       // Convert Uint8List to Image
+  //       ui.Image image = await _convertImage(imageBytes);
 
-        // Convert Image to ByteData
-        ByteData? byteData =
-            await image.toByteData(format: ui.ImageByteFormat.png);
+  //       // Convert Image to ByteData
+  //       ByteData? byteData =
+  //           await image.toByteData(format: ui.ImageByteFormat.png);
 
-        if (byteData != null) {
-          // Save ByteData to file
-          final tempDir = await getTemporaryDirectory();
-          final file = await File('${tempDir.path}/screenshot.png').create();
-          await file.writeAsBytes(byteData.buffer.asUint8List());
+  //       if (byteData != null) {
+  //         // Save ByteData to file
+  //         final tempDir = await getTemporaryDirectory();
+  //         final file = await File('${tempDir.path}/screenshot.png').create();
+  //         await file.writeAsBytes(byteData.buffer.asUint8List());
 
-          // Get quiz options
-          List<String> quizOptions =
-              quizLogic.currentRoundQuestions[quizLogic.questionIndex].choices;
+  //         // Get quiz options
+  //         List<String> quizOptions =
+  //             quizLogic.currentRoundQuestions[quizLogic.questionIndex].choices;
 
-          // Create share message
-          String shareMessage = 'Check out this quiz:\n';
-          shareMessage += 'Options:\n';
-          for (int i = 0; i < quizOptions.length; i++) {
-            shareMessage +=
-                '${String.fromCharCode(65 + i)}. ${quizOptions[i]}\n';
-          }
+  //         // Create share message
+  //         String shareMessage = 'Check out this quiz:\n';
+  //         shareMessage += 'Options:\n';
+  //         for (int i = 0; i < quizOptions.length; i++) {
+  //           shareMessage +=
+  //               '${String.fromCharCode(65 + i)}. ${quizOptions[i]}\n';
+  //         }
 
-          // Add store link message
-          shareMessage += '\nGet the full application at [Your App Store Link]';
+  //         // Add store link message
+  //         shareMessage += '\nGet the full application at [Your App Store Link]';
 
-          // Share the captured image file along with quiz options and store link
-          await Share.shareFiles([file.path], text: shareMessage);
-        }
-      }
-    } catch (e) {
-      print('Error sharing quiz screenshot: $e');
-    }
-  }
+  //         // Share the captured image file along with quiz options and store link
+  //         await Share.shareFiles([file.path], text: shareMessage);
+  //       }
+  //     }
+  //   } catch (e) {
+  //     print('Error sharing quiz screenshot: $e');
+  //   }
+  // }
 
   Future<ui.Image> _convertImage(Uint8List bytes) async {
     Completer<ui.Image> completer = Completer<ui.Image>();
