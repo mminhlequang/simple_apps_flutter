@@ -2,19 +2,13 @@ import 'package:Country_Flag_Quiz/QuestionBank.dart';
 import 'package:Country_Flag_Quiz/QuizLogic.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'package:lottie/lottie.dart';
-import 'package:share/share.dart';
 
 import 'AdHelper.dart';
 import 'SportyBackgroundPainter.dart';
 
 import 'dart:typed_data';
 import 'dart:ui' as ui;
-import 'dart:io';
-import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:share/share.dart';
 
 class QuizPage extends StatefulWidget {
   final String quizType;
@@ -135,201 +129,188 @@ class _QuizPageState extends State<QuizPage> {
           // ),
         ],
       ),
-      body:   AnimatedContainer(
-          duration: const Duration(seconds: 1),
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [_color1, _color2],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
+      body: AnimatedContainer(
+        duration: const Duration(seconds: 1),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [_color1, _color2],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
           ),
-          child: CustomPaint(
-            painter: SportyBackgroundPainter(),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                // Question Text Container with Optional Image
-                Container(
-                  alignment: Alignment.center,
-                  margin: EdgeInsets.all(width * 0.04),
-                  padding: EdgeInsets.all(width * 0.04),
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 255, 255, 255),
-                    borderRadius: BorderRadius.circular(width * 0.04),
-                    border:
-                        Border.all(color: Colors.white, width: width * 0.006),
-                  ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      // Optional Image with Rounded Corners
-                      if (quizLogic
-                              .currentRoundQuestions[quizLogic.questionIndex]
-                              .imagePath !=
-                          null)
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(width * 0.04),
-                          child: Container(
-                            width: double.infinity,
-                            child: Image.asset(
-                              quizLogic
-                                  .currentRoundQuestions[
-                                      quizLogic.questionIndex]
-                                  .imagePath!,
-                              fit: BoxFit.contain,
-                              height: height * 0.3,
-                              errorBuilder: (BuildContext context, Object error,
-                                  StackTrace? stackTrace) {
-                                return Container();
-                              },
-                            ),
-                          ),
-                        ),
-                      // Add space between image and text
-                      SizedBox(height: height * 0.02),
-                      // Question Text
-                      if (quizLogic
-                              .currentRoundQuestions[quizLogic.questionIndex]
-                              .questionText !=
-                          null)
-                        Text(
-                          quizLogic
-                              .currentRoundQuestions[quizLogic.questionIndex]
-                              .questionText!,
-                          style: TextStyle(
-                              fontSize: width * 0.04, color: Colors.black),
-                          textAlign: TextAlign.center,
-                        ),
-                    ],
-                  ),
+        ),
+        child: CustomPaint(
+          painter: SportyBackgroundPainter(),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              // Question Text Container with Optional Image
+              Container(
+                alignment: Alignment.center,
+                margin: const EdgeInsets.all(20),
+                padding: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 255, 255, 255),
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(color: Colors.white, width: 12),
                 ),
-                Expanded(
-                  child: Center(
-                    child: GridView.count(
-                      crossAxisCount: 2,
-                      childAspectRatio: 3.0,
-                      mainAxisSpacing: width * 0.02,
-                      crossAxisSpacing: width * 0.01,
-                      physics:
-                          NeverScrollableScrollPhysics(), // Disable scrolling
-                      children: currentChoices.map((choice) {
-                        return Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 10,
-                          ),
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: selectedAnswer == choice
-                                  ? (isAnswerCorrect == true
-                                      ? Colors.green
-                                      : Colors.red)
-                                  : const Color.fromARGB(255, 250, 249, 249),
-                              shape: RoundedRectangleBorder(
-                                borderRadius:
-                                    BorderRadius.circular(width * 0.02),
-                              ),
-                            ),
-                            onPressed: () {
-                              answerQuestion(choice);
-                              AdHelper.handleClick();
-                            },
-                            child: Center(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    choice,
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        fontSize: width * 0.03,
-                                        color: Colors.black),
-                                  ),
-                                  if (audienceChoice != null)
-                                    Text(
-                                      "${audienceChoice![choice] ?? 0}%",
-                                      style: TextStyle(
-                                          fontSize: width * 0.03,
-                                          color: Colors.black),
-                                    )
-                                ],
-                              ),
-                            ),
-                          ),
-                        );
-                      }).toList(),
-                    ),
-                  ),
-                ),
-
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
-                    Expanded(
-                      child: Padding(
-                        padding: EdgeInsets.all(height * 0.01),
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color.fromARGB(255, 252, 251, 251),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(width * 0.02),
-                            ),
-                          ),
-                          onPressed: () {
-                            AdHelper.handleClick();
-                            setState(() {
-                              currentChoices =
-                                  quizLogic.useFiftyFifty(context)!;
-                            });
-                          },
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const Icon(
-                                Icons.remove_red_eye_outlined,
-                                color: Colors.black,
-                              ),
-                              SizedBox(width: width * 0.02),
-                            ],
+                    // Optional Image with Rounded Corners
+                    if (quizLogic.currentRoundQuestions[quizLogic.questionIndex]
+                            .imagePath !=
+                        null)
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Container(
+                          width: double.infinity,
+                          child: Image.asset(
+                            quizLogic
+                                .currentRoundQuestions[quizLogic.questionIndex]
+                                .imagePath!,
+                            fit: BoxFit.contain,
+                            height: height * 0.15,
+                            errorBuilder: (BuildContext context, Object error,
+                                StackTrace? stackTrace) {
+                              return Container();
+                            },
                           ),
                         ),
                       ),
-                    ),
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(width * 0.02),
-                            ),
-                          ),
-                          onPressed: () {
-                            AdHelper.handleClick();
-                            setState(() {
-                              audienceChoice =
-                                  quizLogic.useAskTheAudience(context);
-                            });
-                          },
-                          child: const Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.people_outline,
-                                color: Colors.black,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
+                    // Add space between image and text
+                    SizedBox(height: height * 0.02),
+                    // Question Text
+                    Text(
+                      quizLogic.currentRoundQuestions[quizLogic.questionIndex]
+                          .questionText,
+                      style: const TextStyle(fontSize: 20, color: Colors.black),
+                      textAlign: TextAlign.center,
                     ),
                   ],
                 ),
-              ],
-            ),
+              ),
+              Expanded(
+                child: Center(
+                  child: GridView.count(
+                    crossAxisCount: 2,
+                    childAspectRatio: 3.0,
+                    mainAxisSpacing: width * 0.02,
+                    crossAxisSpacing: width * 0.01,
+                    children: currentChoices.map((choice) {
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 10,
+                        ),
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: selectedAnswer == choice
+                                ? (isAnswerCorrect == true
+                                    ? Colors.green
+                                    : Colors.red)
+                                : const Color.fromARGB(255, 250, 249, 249),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(width * 0.02),
+                            ),
+                          ),
+                          onPressed: () {
+                            answerQuestion(choice);
+                            AdHelper.handleClick();
+                          },
+                          child: Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  choice,
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      fontSize: width * 0.03,
+                                      color: Colors.black),
+                                ),
+                                if (audienceChoice != null)
+                                  Text(
+                                    "${audienceChoice![choice] ?? 0}%",
+                                    style: TextStyle(
+                                        fontSize: width * 0.03,
+                                        color: Colors.black),
+                                  )
+                              ],
+                            ),
+                          ),
+                        ),
+                      );
+                    }).toList(),
+                  ),
+                ),
+              ),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Expanded(
+                    child: Padding(
+                      padding: EdgeInsets.all(height * 0.01),
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor:
+                              const Color.fromARGB(255, 252, 251, 251),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(width * 0.02),
+                          ),
+                        ),
+                        onPressed: () {
+                          AdHelper.handleClick();
+                          setState(() {
+                            currentChoices = quizLogic.useFiftyFifty(context)!;
+                          });
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Icon(
+                              Icons.remove_red_eye_outlined,
+                              color: Colors.black,
+                            ),
+                            SizedBox(width: width * 0.02),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(4.0),
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(width * 0.02),
+                          ),
+                        ),
+                        onPressed: () {
+                          AdHelper.handleClick();
+                          setState(() {
+                            audienceChoice =
+                                quizLogic.useAskTheAudience(context);
+                          });
+                        },
+                        child: const Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.people_outline,
+                              color: Colors.black,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
           ),
-         
+        ),
       ),
       // bottomNavigationBar: Container(
       //   width: MediaQuery.of(context).size.width,

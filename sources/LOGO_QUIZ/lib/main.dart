@@ -37,6 +37,7 @@ class MyApp extends StatelessWidget {
         AdHelper.handleClick();
       },
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         initialRoute: '/',
         routes: {
           '/': (context) => HomeScreen(),

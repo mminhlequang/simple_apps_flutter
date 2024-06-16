@@ -42,7 +42,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       drawer: MainDrawer(),
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(200),
+        preferredSize: const Size.fromHeight(150),
         child: CustomAppBar(),
       ),
       body: Container(

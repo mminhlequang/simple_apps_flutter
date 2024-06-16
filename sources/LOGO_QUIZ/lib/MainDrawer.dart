@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class MainDrawer extends StatelessWidget {
   @override
@@ -55,21 +56,21 @@ class MainDrawer extends StatelessWidget {
               title: 'About Us',
               textColor: Colors.orange,
               children: [
-                _buildListTile('Developer: Egylab'),
+                _buildListTile('Developer: MinhMinh'),
                 _buildListTile(
-                  'Email: egylabapps@gmail.com',
+                  'Email: mminh.lequang.dev@gmail.com',
                   onTap: () {
                     Navigator.pop(context);
-                    launch('mailto:egylabapps@gmail.com');
+                    launchUrlString('mailto:mminh.lequang.dev@gmail.com');
                   },
                 ),
-                _buildListTile(
-                  'Phone: +201501549825',
-                  onTap: () {
-                    Navigator.pop(context);
-                    launch('tel:+201501549825');
-                  },
-                ),
+                // _buildListTile(
+                //   'Phone: +201501549825',
+                //   onTap: () {
+                //     Navigator.pop(context);
+                //     launch('tel:+201501549825');
+                //   },
+                // ),
               ],
             ),
             _buildCardExpansionTile(
@@ -81,51 +82,17 @@ class MainDrawer extends StatelessWidget {
                   'Facebook',
                   onTap: () {
                     Navigator.pop(context);
-                    launch('https://www.facebook.com/your_facebook_page');
+                    launchUrlString('https://www.facebook.com/mminhlequang/');
                   },
                 ),
-                _buildListTile(
-                  'Instagram',
-                  onTap: () {
-                    Navigator.pop(context);
-                    launch('https://www.instagram.com/your_instagram_page');
-                  },
-                ),
-                _buildListTile(
-                  'Twitter',
-                  onTap: () {
-                    Navigator.pop(context);
-                    launch('https://twitter.com/your_twitter_page');
-                  },
-                ),
-                _buildListTile(
-                  'WhatsApp: +20 1501549825',
-                  onTap: () {
-                    Navigator.pop(context);
-                    launch('https://wa.me/+201501549825');
-                  },
-                ),
+                // _buildListTile(
+                //   'Telegram: @mminhlequang',
+                //   onTap: () {
+                //     Navigator.pop(context);
+                //     launch('https://wa.me/+201501549825');
+                //   },
+                // ),
               ],
-            ),
-            _buildCardListTile(
-              icon: Icons.apps,
-              title: 'More Apps',
-              textColor: Colors.orange,
-              onTap: () {
-                Navigator.pop(context);
-                launch(
-                    'https://play.google.com/store/apps/dev?id=73140361695297197');
-              },
-            ),
-            _buildCardListTile(
-              icon: Icons.star,
-              title: 'Rate Us',
-              textColor: Colors.orange,
-              onTap: () {
-                Navigator.pop(context);
-                launch(
-                    'https://play.google.com/store/apps/details?id=com.app.sflagquizs');
-              },
             ),
           ],
         ),

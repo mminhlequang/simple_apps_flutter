@@ -70,7 +70,6 @@ class _CustomAppBarState extends State<CustomAppBar> {
                   Colors.white,
                 ],
               ),
-              borderRadius: BorderRadius.circular(20), // Rounded corners
             ),
           ),
           PageView.builder(
@@ -90,7 +89,6 @@ class _CustomAppBarState extends State<CustomAppBar> {
                     image: AssetImage(imagePaths[index % imagePaths.length]),
                     fit: BoxFit.cover,
                   ),
-                  borderRadius: BorderRadius.circular(20), // Rounded corners
                 ),
               );
             },
