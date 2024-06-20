@@ -1,6 +1,6 @@
 {
-    "name": "sflagquizs",
-    "short_name": "sflagquizs",
+    "name": "sflagquiz",
+    "short_name": "sflagquiz",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

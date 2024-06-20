@@ -1,4 +1,4 @@
-package com.app.sflagquizs
+package com.app.sflagquiz
 
 import io.flutter.embedding.android.FlutterActivity
 

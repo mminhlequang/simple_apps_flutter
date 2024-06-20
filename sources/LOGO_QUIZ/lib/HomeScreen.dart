@@ -49,8 +49,12 @@ class HomeScreen extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         child: GridView.builder(
           itemCount: locations.length,
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: MediaQuery.sizeOf(context).width < 520
+                ? 2
+                : MediaQuery.sizeOf(context).width < 680
+                    ? 3
+                    : 4,
             childAspectRatio: 0.8,
             mainAxisSpacing: 20,
             crossAxisSpacing: 20,

@@ -1,4 +1,4 @@
-# sflagquizs
+# sflagquiz
 
 A new Flutter project.
 
