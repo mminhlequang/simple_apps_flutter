@@ -1,4 +1,4 @@
-package com.mminhlequang.skidenglishanimals
+package com.mminhlequang.skidanimals
 
 import io.flutter.embedding.android.FlutterActivity
 

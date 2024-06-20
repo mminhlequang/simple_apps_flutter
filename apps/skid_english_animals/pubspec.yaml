@@ -1,5 +1,5 @@
 name: app
-description: SKidEnglishAnimals 
+description: SKidAnimals 
 
 version: 1.0.0+1
 
@@ -57,10 +57,20 @@ dev_dependencies:
 flutter_icons:
   android: "ic_launcher"
   ios: true
-  image_path: "assets/images/animals/penguin.png"
+  #ios
+  image_path: "assets/logo.png"
+  #android 
+  adaptive_icon_foreground: "assets/logo2.png"
+  adaptive_icon_background: "#ffffff"
   macos:
     generate: true
-    image_path: "assets/images/animals/penguin.png"
+    image_path: "assets/logo.png"
+
+flutter_native_splash:
+  color: "#ffffff"
+  image: assets/logo2.png
+  web: false
+  
 
 jsonToDart:
   typeChecking: true  #default: undefined (Select from picker)
@@ -68,16 +78,6 @@ jsonToDart:
   nullSafety: true #default: false
   copyWithMethod: false #default: false
   mergeArrayApproach: false #default: true
-
-flutter_native_splash:
-  color: "#FFF9FC"
-  image: assets/images/logo.png
-
-  android_12:
-    image: assets/images/logo.png
-    icon_background_color: "#FFF9FC"
-
-  web: false
 
 
 flutter:

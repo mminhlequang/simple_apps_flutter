@@ -8,7 +8,7 @@
 #### TitlePage2: Your favorites
 #### SubTitlePage2: Saved impressive Animals
 
-#### AppName: SKidEnglishAnimals
-#### AppID: com.mminhlequang.skidenglishanimals
+#### AppName: SKidAnimals
+#### AppID: com.mminhlequang.skidanimals
 #### PackageName: app
-#### PackageDesc: SKidEnglishAnimals
+#### PackageDesc: SKidAnimals
