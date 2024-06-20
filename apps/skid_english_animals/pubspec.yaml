@@ -53,27 +53,14 @@ dependency_overrides:
 dev_dependencies:
   flutter_launcher_icons: ^0.13.1
   flutter_lints: ^4.0.0
-  msix: ^3.16.7
-
-msix_config:
-  display_name: DreamArtCollection
-  publisher_display_name: mminhlequang
-  identity_name: com.mminhlequang.dreamartai
-  msix_version: 1.1.4.20
-  logo_path: D:\Documents\Workspace\mminhlequang\dream_art_ai_flutter\assets\images\logo_macos.png
-  capabilities: internetClient
 
 flutter_icons:
   android: "ic_launcher"
   ios: true
-  image_path: "assets/images/logo.jpg"
+  image_path: "assets/images/animals/penguin.png"
   macos:
     generate: true
-    image_path: "assets/images/logo_macos.png"
-  windows:
-    generate: true
-    image_path: "assets/images/logo_macos.png"
-    icon_size: 48 # min:48, max:256, default: 48
+    image_path: "assets/images/animals/penguin.png"
 
 jsonToDart:
   typeChecking: true  #default: undefined (Select from picker)

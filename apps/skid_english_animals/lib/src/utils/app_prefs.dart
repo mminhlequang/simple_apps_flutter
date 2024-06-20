@@ -141,17 +141,17 @@ class AppPrefs extends AppPrefsBase {
     }
   }
 
-  List<ImageData>? get favoriteItems {
+  List<CardData>? get favoriteItems {
     final objectString = _boxData.get('favoriteItems');
     if (objectString != null) {
       return (jsonDecode(objectString) as List)
-          .map((e) => ImageData.fromJson(e))
+          .map((e) => CardData.fromJson(e))
           .toList();
     }
     return [];
   }
 
-  set favoriteItems(List<ImageData>? value) {
+  set favoriteItems(List<CardData>? value) {
     if (value != null) {
       final string = json.encode(value.map((e) => e.toJson()).toList());
       _boxData.put('favoriteItems', string);

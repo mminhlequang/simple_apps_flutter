@@ -19,8 +19,7 @@ void main() async {
     if (Platform.isAndroid)
       SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
           overlays: [SystemUiOverlay.top]),
-    if (Platform.isIOS)
-      SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]),
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]),
     AppPrefs.instance.initialize(),
     initEasyLocalization(),
   ]);
@@ -29,8 +28,7 @@ void main() async {
   internalSetup();
   getItSetup();
 
-    runApp(wrapEasyLocalization(child: const _App()));
-   
+  runApp(wrapEasyLocalization(child: const _App()));
 }
 
 class _App extends StatelessWidget {

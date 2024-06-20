@@ -9,8 +9,9 @@ GlobalKey<NavigatorState> get appNavigatorKey =>
 bool get isAppContextReady => appNavigatorKey.currentContext != null;
 BuildContext get appContext => appNavigatorKey.currentContext!;
 
-pushWidget({required child, String? routeName}) {
+pushWidget({required child, String? routeName, bool opaque = true}) {
   return Navigator.of(appContext).push(PageRouteBuilder(
+    opaque: opaque,
     pageBuilder: (context, animation, secondaryAnimation) => child,
     transitionsBuilder: (context, animation, secondaryAnimation, child) =>
         FadeTransition(opacity: animation, child: child),

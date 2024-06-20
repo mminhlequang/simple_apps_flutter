@@ -46,13 +46,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     ],
                   ),
                 ),
-                IconButton(
-                  onPressed: appChangedTheme,
-                  icon: WidgetAppSVG(
-                    AppPrefs.instance.isDarkTheme ? 'sun' : 'moon',
-                    color: appColorText,
-                  ),
-                )
+                // IconButton(
+                //   onPressed: appChangedTheme,
+                //   icon: WidgetAppSVG(
+                //     AppPrefs.instance.isDarkTheme ? 'sun' : 'moon',
+                //     color: appColorText,
+                //   ),
+                // )
               ],
             ),
           ),
@@ -67,20 +67,20 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Gap(8.sw),
-                  _WidgetSection(
-                    title: "User Interface",
-                    child: Column(
-                      children: [
-                        _WidgetButton(
-                          asset: 'language',
-                          title: "Language".tr(),
-                          onTap: () {
-                            appOpenBottomSheet(const WidgetLanguagesSheet());
-                          },
-                        ),
-                      ],
-                    ),
-                  ),
+                  // _WidgetSection(
+                  //   title: "User Interface",
+                  //   child: Column(
+                  //     children: [
+                  // _WidgetButton(
+                  //   asset: 'language',
+                  //   title: "Language".tr(),
+                  //   onTap: () {
+                  //     appOpenBottomSheet(const WidgetLanguagesSheet());
+                  //   },
+                  // ),
+                  //     ],
+                  //   ),
+                  // ),
                   // Container(
                   //   height: 1,
                   //   margin: EdgeInsets.symmetric(vertical: 10.sw),
@@ -195,12 +195,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   //     ],
                   //   ),
                   // ),
-                  Container(
-                    height: 1,
-                    margin: EdgeInsets.symmetric(
-                        vertical: 10.sw, horizontal: 16.sw),
-                    color: appColorElement,
-                  ),
+                  // Container(
+                  //   height: 1,
+                  //   margin: EdgeInsets.symmetric(
+                  //       vertical: 10.sw, horizontal: 16.sw),
+                  //   color: appColorElement,
+                  // ),
                   Column(
                     children: [
                       _WidgetButton(
@@ -214,13 +214,30 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       ),
                       _WidgetButton(
                         asset: 'external-link',
-                        title: "Contact us".tr(),
+                        title: "Contact us: mail to author".tr(),
                         onTap: () {
                           appHaptic();
                           launchUrlString(
                               "mailto:mminh.lequang+privacy-policy@gmail.com?subject=Need help in app");
                         },
-                      )
+                      ),
+                      _WidgetButton(
+                        asset: 'external-link',
+                        title: "Contact us: Facebook".tr(),
+                        onTap: () {
+                          appHaptic();
+                          launchUrlString(
+                              "https://www.facebook.com/mminhlequang/");
+                        },
+                      ),
+                      _WidgetButton(
+                        asset: 'external-link',
+                        title: "Contact us: github".tr(),
+                        onTap: () {
+                          appHaptic();
+                          launchUrlString("https://github.com/mminhlequang");
+                        },
+                      ),
                     ],
                   ),
                 ],
