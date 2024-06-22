@@ -1,5 +1,4 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
@@ -7,7 +6,6 @@ import 'package:go_router/go_router.dart';
 import 'package:internal_core/internal_core.dart';
 
 import 'package:app/src/constants/constants.dart';
-import 'package:app/src/presentation/widgets/widgets.dart';
 import 'package:app/src/utils/utils.dart';
 
 import 'widget_card_item.dart';
@@ -58,42 +56,48 @@ class _WidgetCardDetailState extends State<WidgetCardDetail> {
                   ),
                   child: SingleChildScrollView(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.all(16.0),
+                        const SizedBox(height: 16),
+                        Center(
                           child: Hero(
                             tag: widget.data.imagePath,
                             child: Image.asset(
                               "assets/images/animals/${widget.data.imagePath}",
-                              width: 280.sw,
+                              width: 240.sw,
                               fit: BoxFit.fitWidth,
                             ),
                           ),
                         ),
-                        const SizedBox(height: 8),
-                        Text(
-                          "`${widget.data.pronunciation}`",
-                          style: w300TextStyle(
-                            fontSize: 16.sw,
-                            color: getRandomColor(),
+                        const SizedBox(height: 24),
+                        Center(
+                          child: Text(
+                            "`${widget.data.pronunciation}`",
+                            style: w300TextStyle(
+                              fontSize: 16.sw,
+                              color: getRandomColor(),
+                            ),
                           ),
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              widget.data.text,
-                              style: w600TextStyle(
-                                  color: getRandomColor(), fontSize: 20.sw),
-                            ),
-                            const SizedBox(width: 8),
-                            Icon(
-                              Icons.volume_up,
-                              color: getRandomColor(),
-                              size: 28.sw,
-                            ),
-                          ],
+                        Center(
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                widget.data.text,
+                                style: w600TextStyle(
+                                    color: getRandomColor(), fontSize: 20.sw),
+                              ),
+                              const SizedBox(width: 8),
+                              Icon(
+                                Icons.volume_up,
+                                color: getRandomColor(),
+                                size: 28.sw,
+                              ),
+                            ],
+                          ),
                         ),
                         const SizedBox(height: 12),
                         Text(
