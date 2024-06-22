@@ -56,69 +56,72 @@ class _WidgetCardDetailState extends State<WidgetCardDetail> {
                       end: Alignment.bottomRight,
                     ),
                   ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(16.0),
-                        child: Hero(
-                          tag: widget.data.imagePath,
-                          child: Image.asset(
-                            "assets/images/animals/${widget.data.imagePath}",
-                            fit: BoxFit.fitWidth,
+                  child: SingleChildScrollView(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Hero(
+                            tag: widget.data.imagePath,
+                            child: Image.asset(
+                              "assets/images/animals/${widget.data.imagePath}",
+                              width: 280.sw,
+                              fit: BoxFit.fitWidth,
+                            ),
                           ),
                         ),
-                      ),
-                      const SizedBox(height: 8),
-                      Text(
-                        "`${widget.data.pronunciation}`",
-                        style: w300TextStyle(
-                          fontSize: 16.sw,
-                          color: getRandomColor(),
-                        ),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            widget.data.text,
-                            style: w600TextStyle(
-                                color: getRandomColor(), fontSize: 20.sw),
-                          ),
-                          const SizedBox(width: 8),
-                          Icon(
-                            Icons.volume_up,
+                        const SizedBox(height: 8),
+                        Text(
+                          "`${widget.data.pronunciation}`",
+                          style: w300TextStyle(
+                            fontSize: 16.sw,
                             color: getRandomColor(),
-                            size: 28.sw,
                           ),
-                        ],
-                      ),
-                      const SizedBox(height: 12),
-                      Text(
-                        widget.data.description,
-                        style: w400TextStyle(
-                          fontSize: 18.sw,
-                          color: getRandomColor(),
                         ),
-                      ),
-                      const SizedBox(height: 8),
-                      Text(
-                        "Ex: \n- ${widget.data.exampleSentence1}\n- ${widget.data.exampleSentence2}",
-                        style: w400TextStyle(
-                          fontSize: 18.sw,
-                          color: getRandomColor(),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              widget.data.text,
+                              style: w600TextStyle(
+                                  color: getRandomColor(), fontSize: 20.sw),
+                            ),
+                            const SizedBox(width: 8),
+                            Icon(
+                              Icons.volume_up,
+                              color: getRandomColor(),
+                              size: 28.sw,
+                            ),
+                          ],
                         ),
-                      ),
-                      const SizedBox(height: 8),
-                      Text(
-                        "Fun fact:\n- ${widget.data.funFact}",
-                        style: w400TextStyle(
-                          fontSize: 18.sw,
-                          color: getRandomColor(),
+                        const SizedBox(height: 12),
+                        Text(
+                          widget.data.description,
+                          style: w400TextStyle(
+                            fontSize: 18.sw,
+                            color: getRandomColor(),
+                          ),
                         ),
-                      ),
-                      const SizedBox(height: 32),
-                    ],
+                        const SizedBox(height: 8),
+                        Text(
+                          "Ex: \n- ${widget.data.exampleSentence1}\n- ${widget.data.exampleSentence2}",
+                          style: w400TextStyle(
+                            fontSize: 18.sw,
+                            color: getRandomColor(),
+                          ),
+                        ),
+                        const SizedBox(height: 8),
+                        Text(
+                          "Fun fact:\n- ${widget.data.funFact}",
+                          style: w400TextStyle(
+                            fontSize: 18.sw,
+                            color: getRandomColor(),
+                          ),
+                        ),
+                        const SizedBox(height: 32),
+                      ],
+                    ),
                   ),
                 ),
               ),
