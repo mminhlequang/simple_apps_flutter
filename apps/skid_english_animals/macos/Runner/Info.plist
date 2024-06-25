@@ -34,5 +34,7 @@
 		<string>vi</string>
 		<string>fr</string>
 	</array>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.business</string>
 </dict>
 </plist>
