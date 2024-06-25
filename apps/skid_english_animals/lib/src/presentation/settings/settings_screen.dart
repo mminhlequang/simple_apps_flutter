@@ -40,7 +40,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       ),
                       Gap(2.sw),
                       Text(
-                        'SKidAnimals',
+                        'SKidAniml'
                         style: w300TextStyle(fontSize: 12.sw),
                       ),
                     ],
@@ -86,121 +86,99 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   //   margin: EdgeInsets.symmetric(vertical: 10.sw),
                   //   color: appColorElement,
                   // ),
-                  // _WidgetSection(
-                  //   title: "App Content",
-                  //   child: Column(
-                  //     children: [
-                  //       _WidgetButton(
-                  //         asset: 'chart-line',
-                  //         title: "Period sort".tr(),
-                  //         child: Column(
-                  //             children: ['Week', 'Month', 'Year']
-                  //                 .map(
-                  //                   (e) => _WidgetButtonCheck(
-                  //                     title: 'By ${e.toLowerCase()}'.tr(),
-                  //                     onTap: () {
-                  //                       appHaptic();
-                  //                       AppPrefs.instance.period = e;
-                  //                       setState(() {});
-                  //                     },
-                  //                     isSelected: AppPrefs.instance.period == e,
-                  //                   ),
-                  //                 )
-                  //                 .toList()),
-                  //       ),
-                  //       _WidgetButton(
-                  //         asset: 'tag',
-                  //         title: "Tag favorite".tr(),
-                  //         child: Column(
-                  //           children: modelCubit.state.tags!
-                  //               .map((e) => _WidgetButtonCheck(
-                  //                     title: e.name?.capitalizeFirst ?? "",
-                  //                     onTap: () {
-                  //                       appHaptic();
-                  //                       if (AppPrefs.instance.tag == e.name) {
-                  //                         AppPrefs.instance.tag = null;
-                  //                       } else {
-                  //                         AppPrefs.instance.tag = e.name;
-                  //                       }
-                  //                       modelCubit.state.models = [];
-                  //                       setState(() {});
-                  //                     },
-                  //                     isSelected:
-                  //                         AppPrefs.instance.tag == e.name,
-                  //                   ))
-                  //               .toList(),
-                  //         ),
-                  //       ),
-                  //       if (AppPrefs.instance.enableNsfw)
-                  //         _WidgetButton(
-                  //           asset: 'chart-donut',
-                  //           title: "Not Safe For Work".tr(),
-                  //           child: Column(
-                  //             children: ['None', 'Soft', 'Mature', 'X']
-                  //                 .map(
-                  //                   (e) => _WidgetButtonCheck(
-                  //                     title: e,
-                  //                     onTap: () async {
-                  //                       appHaptic();
-                  //                       if (e != 'None') {
-                  //                         var r = await nsfwWarningDialog();
-                  //                         if (r != true) return;
-                  //                       }
-                  //                       modelCubit.state.models = [];
-                  //                       AppPrefs.instance.nsfw = e;
-                  //                       setState(() {});
-                  //                     },
-                  //                     isSelected: AppPrefs.instance.nsfw == e,
-                  //                   ),
-                  //                 )
-                  //                 .toList(),
-                  //           ),
-                  //         ),
-                  //       _WidgetButton(
-                  //         asset: 'info-square',
-                  //         title: "Show meta pormpt image".tr(),
-                  //         rightAction: WidgetAppSwitcher(
-                  //           value: AppPrefs.instance.enablePormpt,
-                  //           onToggle: (value) {
-                  //             appHaptic();
-                  //             setState(() {
-                  //               AppPrefs.instance.enablePormpt = value;
-                  //             });
-                  //           },
-                  //         ),
-                  //       ),
-                  //       if (AppPrefs.instance.enableNsfw)
-                  //         _WidgetButton(
-                  //           asset: 'fade',
-                  //           title: "Blur nsfw content".tr(),
-                  //           rightAction: WidgetAppSwitcher(
-                  //             value: AppPrefs.instance.blurNsfwImage,
-                  //             onToggle: (value) {
-                  //               appHaptic();
-                  //               setState(() {
-                  //                 AppPrefs.instance.blurNsfwImage = value;
-                  //               });
-                  //             },
-                  //           ),
-                  //         ),
-                  //       _WidgetButton(
-                  //         onTap: () {
-                  //           appHaptic();
-                  //           context.push('/hidden_content');
-                  //         },
-                  //         asset: 'eye-off',
-                  //         title: "Manage hidden content".tr(),
-                  //       ),
-
-                  //     ],
-                  //   ),
-                  // ),
-                  // Container(
-                  //   height: 1,
-                  //   margin: EdgeInsets.symmetric(
-                  //       vertical: 10.sw, horizontal: 16.sw),
-                  //   color: appColorElement,
-                  // ),
+                  _WidgetSection(
+                    title: "App Content",
+                    child: Column(
+                      children: [
+                        // _WidgetButton(
+                        //   asset: 'chart-line',
+                        //   title: "Period sort".tr(),
+                        //   child: Column(
+                        //       children: ['Week', 'Month', 'Year']
+                        //           .map(
+                        //             (e) => _WidgetButtonCheck(
+                        //               title: 'By ${e.toLowerCase()}'.tr(),
+                        //               onTap: () {
+                        //                 appHaptic();
+                        //                 AppPrefs.instance.period = e;
+                        //                 setState(() {});
+                        //               },
+                        //               isSelected: AppPrefs.instance.period == e,
+                        //             ),
+                        //           )
+                        //           .toList()),
+                        // ),
+                        _WidgetButton(
+                          asset: 'tag',
+                          title: "Blog development".tr(),
+                          onTap: () {
+                            appHaptic();
+                            launchUrlString('https://mminhdev.io.vn/');
+                          },
+                        ),
+                        // if (AppPrefs.instance.enableNsfw)
+                        //   _WidgetButton(
+                        //     asset: 'chart-donut',
+                        //     title: "Not Safe For Work".tr(),
+                        //     child: Column(
+                        //       children: ['None', 'Soft', 'Mature', 'X']
+                        //           .map(
+                        //             (e) => _WidgetButtonCheck(
+                        //               title: e,
+                        //               onTap: () async {
+                        //                 appHaptic();
+                        //                 if (e != 'None') {
+                        //                   var r = await nsfwWarningDialog();
+                        //                   if (r != true) return;
+                        //                 }
+                        //                 modelCubit.state.models = [];
+                        //                 AppPrefs.instance.nsfw = e;
+                        //                 setState(() {});
+                        //               },
+                        //               isSelected: AppPrefs.instance.nsfw == e,
+                        //             ),
+                        //           )
+                        //           .toList(),
+                        //     ),
+                        //   ),
+                        _WidgetButton(
+                          asset: 'info-square',
+                          title: "More apps".tr(),
+                          onTap: () {
+                            appHaptic();
+                            launchUrlString('https://apps.mminhdev.io.vn/');
+                          },
+                        ),
+                        // _WidgetButton(
+                        //   asset: 'fade',
+                        //   title: "Blur nsfw content".tr(),
+                        //   rightAction: WidgetAppSwitcher(
+                        //     value: false,
+                        //     onToggle: (value) {
+                        //       appHaptic();
+                        //       // setState(() {
+                        //       //   AppPrefs.instance.blurNsfwImage = value;
+                        //       // });
+                        //     },
+                        //   ),
+                        // ),
+                        // _WidgetButton(
+                        //   onTap: () {
+                        //     appHaptic();
+                        //     context.push('/hidden_content');
+                        //   },
+                        //   asset: 'eye-off',
+                        //   title: "Manage hidden content".tr(),
+                        // ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    height: 1,
+                    margin: EdgeInsets.symmetric(
+                        vertical: 10.sw, horizontal: 16.sw),
+                    color: appColorElement,
+                  ),
                   Column(
                     children: [
                       _WidgetButton(
@@ -214,7 +192,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       ),
                       _WidgetButton(
                         asset: 'external-link',
-                        title: "Contact us: mail to author".tr(),
+                        title: "Contact us via e-mail".tr(),
                         onTap: () {
                           appHaptic();
                           launchUrlString(
@@ -223,19 +201,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       ),
                       _WidgetButton(
                         asset: 'external-link',
-                        title: "Contact us: Facebook".tr(),
+                        title: "Contact us via Social media Facebook".tr(),
                         onTap: () {
                           appHaptic();
                           launchUrlString(
                               "https://www.facebook.com/mminhlequang/");
-                        },
-                      ),
-                      _WidgetButton(
-                        asset: 'external-link',
-                        title: "Contact us: github".tr(),
-                        onTap: () {
-                          appHaptic();
-                          launchUrlString("https://github.com/mminhlequang");
                         },
                       ),
                     ],
