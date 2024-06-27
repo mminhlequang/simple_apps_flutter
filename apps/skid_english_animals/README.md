@@ -8,7 +8,7 @@
 #### TitlePage2: Your favorites
 #### SubTitlePage2: Saved impressive Animals
 
-#### AppName: SKidAnimals
+#### AppName: PicTalk: Animals
 #### AppID: com.mminhlequang.skidanimals
 #### PackageName: app
-#### PackageDesc: SKidAnimals
+#### PackageDesc: PicTalk Animals
