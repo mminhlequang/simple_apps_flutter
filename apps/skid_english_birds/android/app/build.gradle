@@ -31,7 +31,7 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    namespace = "com.mminhlequang.skidbirds"
+    namespace = "com.mminhlequang.pictalkbirds"
     compileSdkVersion 34
 
     sourceSets {
@@ -39,7 +39,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.mminhlequang.skidbirds"
+        applicationId "com.mminhlequang.pictalkbirds"
         minSdkVersion 23
         targetSdkVersion 34
         versionCode flutterVersionCode.toInteger()

@@ -8,9 +8,9 @@
 #### TitlePage2: Your favorites
 #### SubTitlePage2: Saved impressive birds
 
-#### AppName: SKidBirds
-#### AppID: com.mminhlequang.skidbirds
+#### AppName: PicTalk: Birds
+#### AppID: com.mminhlequang.pictalkbirds
 #### PackageName: app
-#### PackageDesc: SKidBirds
+#### PackageDesc: PicTalk Birds
 
 #### Background Color: FFF0E5
