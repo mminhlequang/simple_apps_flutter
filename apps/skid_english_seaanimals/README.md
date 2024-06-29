@@ -11,6 +11,6 @@
 #### AppName: SKidSeaAnimals
 #### AppID: com.mminhlequang.skidseaanimals
 #### PackageName: app
-#### PackageDesc: SKidSeaAnimals
+#### PackageDesc: SKidSeaAnimals flutter app
 
 #### Background Color: E5FDFF
