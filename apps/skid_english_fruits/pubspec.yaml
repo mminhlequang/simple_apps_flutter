@@ -1,5 +1,5 @@
 name: app
-description: SKidVegetables 
+description: PicTalk Fruits 
 
 version: 1.0.0+1
 
@@ -61,13 +61,13 @@ flutter_icons:
   image_path: "assets/logo.png"
   #android 
   adaptive_icon_foreground: "assets/logo2.png"
-  adaptive_icon_background: "#EAFAFE"
+  adaptive_icon_background: "#FFD9FF"
   macos:
     generate: true
     image_path: "assets/logo.png"
 
 flutter_native_splash:
-  color: "#EAFAFE"
+  color: "#FFD9FF"
   image: assets/logo2.png
   web: false
   
@@ -86,4 +86,4 @@ flutter:
     - assets/l10n/
     - assets/jsons/
     - assets/images/svg/ 
-    - assets/images/vegetables/ 
+    - assets/images/fruits/ 

@@ -2,15 +2,15 @@
 
 ## App Configs:
 
-#### TitlePage1: Explore vegetables
+#### TitlePage1: Explore Fruits
 #### SubTitlePage1: List collection
 
 #### TitlePage2: Your favorites
-#### SubTitlePage2: Saved impressive vegetables
+#### SubTitlePage2: Saved impressive Fruits
 
-#### AppName: SKidVegetables
-#### AppID: com.mminhlequang.skidvegetables
+#### AppName: PicTalk: Fruits
+#### AppID: com.mminhlequang.pictalkfruits
 #### PackageName: app
-#### PackageDesc: SKidVegetables
+#### PackageDesc: PicTalk: Fruits
 
-#### Background Color: EAFAFE
+#### Background Color: FFD9FF
