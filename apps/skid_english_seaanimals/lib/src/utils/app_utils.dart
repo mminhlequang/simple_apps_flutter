@@ -58,7 +58,7 @@ Future<bool?> nsfwWarningDialog() async => await showCupertinoDialog<bool>(
 bool get isMobile => Platform.isIOS || Platform.isAndroid;
 
 String stringShareImage(url) =>
-    '"SKidSeaAnimals"\n${"I want share to you this image:".tr()} $url\n${"You can view more at:".tr()} ${Platform.isAndroid ? "https://play.google.com/store/apps/details?id=com.mminhlequang.skidseaanimals" : "https://apps.apple.com/us/app/dreamart-ai/id6480363700?platform=iphone"}';
+    '"PicTalk: SeaAnimals"\n${"I want share to you this image:".tr()} $url\n${"You can view more at:".tr()} ${Platform.isAndroid ? "https://play.google.com/store/apps/details?id=com.mminhlequang.pictalkseaanimals" : "https://apps.apple.com/us/app/dreamart-ai/id6480363700?platform=iphone"}';
 
 onOpenImage({
   bool isExploreList = false,

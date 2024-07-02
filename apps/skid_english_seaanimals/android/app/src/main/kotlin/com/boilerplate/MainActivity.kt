@@ -1,4 +1,4 @@
-package com.mminhlequang.skidseaanimals
+package com.mminhlequang.pictalkseaanimals
 
 import io.flutter.embedding.android.FlutterActivity
 

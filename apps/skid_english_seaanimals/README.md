@@ -8,9 +8,9 @@
 #### TitlePage2: Your favorites
 #### SubTitlePage2: Saved impressive sea-animals
 
-#### AppName: SKidSeaAnimals
-#### AppID: com.mminhlequang.skidseaanimals
+#### AppName: PicTalk: SeaAnimals
+#### AppID: com.mminhlequang.pictalkseaanimals
 #### PackageName: app
-#### PackageDesc: SKidSeaAnimals flutter app
+#### PackageDesc: PicTalk: SeaAnimals flutter app
 
 #### Background Color: E5FDFF
