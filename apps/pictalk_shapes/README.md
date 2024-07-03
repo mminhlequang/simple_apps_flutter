@@ -14,4 +14,4 @@
 #### PackageDesc: Pictalk Shapes
 #### Image path: images/shapes
 
-#### Background Color: EAFAFE
+#### Background Color: EAFFFE

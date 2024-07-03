@@ -61,13 +61,13 @@ flutter_icons:
   image_path: "assets/logo.png"
   #android 
   adaptive_icon_foreground: "assets/logo2.png"
-  adaptive_icon_background: "#EAFAFE"
+  adaptive_icon_background: "#EAFFFE"
   macos:
     generate: true
     image_path: "assets/logo.png"
 
 flutter_native_splash:
-  color: "#EAFAFE"
+  color: "#EAFFFE"
   image: assets/logo2.png
   web: false
   
