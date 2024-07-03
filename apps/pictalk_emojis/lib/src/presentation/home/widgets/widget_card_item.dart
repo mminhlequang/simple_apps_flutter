@@ -40,11 +40,11 @@ class _WidgetCardItemState extends State<WidgetCardItem> {
           pushWidget(child: WidgetCardDetail(data: widget.data), opaque: false);
         },
         child: Container(
-          decoration: const BoxDecoration(
+          decoration:   BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                Color.fromARGB(255, 233, 226, 224), // start color
-                Color.fromARGB(255, 255, 255, 255), // end color
+                hexColor("FFF6DA"), // start color
+                hexColor("FFFBEC"), // end color
               ],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
@@ -60,7 +60,7 @@ class _WidgetCardItemState extends State<WidgetCardItem> {
                     child: Hero(
                       tag: widget.data.imagePath,
                       child: Image.asset(
-                        "assets/images/vegetables/${widget.data.imagePath}",
+                        "assets/images/emoji/${widget.data.imagePath}",
                         fit: BoxFit.fitWidth,
                       ),
                     ),

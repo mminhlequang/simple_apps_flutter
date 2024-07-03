@@ -14,7 +14,8 @@ class AppColors extends AppColorsBase {
   Color get text => byTheme(Colors.black, kdark: Colors.white);
 
   @override
-  Color get background => byTheme(hexColor("EAFAFE"), kdark: hexColor('#121212'));
+  Color get background =>
+      byTheme(hexColor("FFFBEC"), kdark: hexColor('#121212'));
 
   @override
   Color get element => byTheme(hexColor('FAFAFA'), kdark: hexColor('#161618'));

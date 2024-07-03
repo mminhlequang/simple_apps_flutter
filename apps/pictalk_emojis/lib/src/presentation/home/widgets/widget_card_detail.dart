@@ -64,7 +64,7 @@ class _WidgetCardDetailState extends State<WidgetCardDetail> {
                         child: Hero(
                           tag: widget.data.imagePath,
                           child: Image.asset(
-                            "assets/images/vegetables/${widget.data.imagePath}",
+                            "assets/images/emoji/${widget.data.imagePath}",
                             fit: BoxFit.fitWidth,
                           ),
                         ),

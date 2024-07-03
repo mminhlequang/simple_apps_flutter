@@ -2,15 +2,15 @@
 
 ## App Configs:
 
-#### TitlePage1: Explore vegetables
+#### TitlePage1: Explore emojis
 #### SubTitlePage1: List collection
 
 #### TitlePage2: Your favorites
-#### SubTitlePage2: Saved impressive vegetables
+#### SubTitlePage2: Saved impressive emojis
 
-#### AppName: SKidVegetables
-#### AppID: com.mminhlequang.skidvegetables
+#### AppName: PicTalk: Emojis
+#### AppID: com.mminhlequang.pictalkemojis
 #### PackageName: app
-#### PackageDesc: SKidVegetables
+#### PackageDesc: PicTalk: Emojis
 
-#### Background Color: EAFAFE
+#### Background Color: FFFBEC

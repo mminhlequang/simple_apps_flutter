@@ -1,4 +1,4 @@
-package com.mminhlequang.skidvegetables
+package com.mminhlequang.pictalkemojis
 
 import io.flutter.embedding.android.FlutterActivity
 
