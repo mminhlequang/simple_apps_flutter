@@ -2,15 +2,16 @@
 
 ## App Configs:
 
-#### TitlePage1: Explore vegetables
+#### TitlePage1: Explore Shapes
 #### SubTitlePage1: List collection
 
 #### TitlePage2: Your favorites
-#### SubTitlePage2: Saved impressive vegetables
+#### SubTitlePage2: Saved impressive Shapes
 
-#### AppName: SKidVegetables
-#### AppID: com.mminhlequang.skidvegetables
+#### AppName: Pictalk: Shapes
+#### AppID: com.mminhlequang.pictalkshapes
 #### PackageName: app
-#### PackageDesc: SKidVegetables
+#### PackageDesc: Pictalk Shapes
+#### Image path: images/shapes
 
 #### Background Color: EAFAFE

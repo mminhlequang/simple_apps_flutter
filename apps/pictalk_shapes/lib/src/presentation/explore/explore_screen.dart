@@ -336,7 +336,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Explore vegetables'.tr(),
+                        'Explore Shapes'.tr(),
                         style: w600TextStyle(fontSize: 18.sw),
                       ),
                       Gap(2.sw),

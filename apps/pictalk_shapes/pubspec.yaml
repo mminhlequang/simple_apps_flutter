@@ -1,5 +1,5 @@
 name: app
-description: SKidVegetables 
+description: Pictalk Shapes 
 
 version: 1.0.0+1
 
@@ -86,4 +86,4 @@ flutter:
     - assets/l10n/
     - assets/jsons/
     - assets/images/svg/ 
-    - assets/images/vegetables/ 
+    - assets/images/shapes/ 
