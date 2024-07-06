@@ -70,13 +70,13 @@ class AppPrefs extends AppPrefsBase {
   set dateFormat(String value) => _boxData.put('dateFormat', value);
 
   @override
-  String get dateFormat => _boxData.get('dateFormat') ?? 'en';
+  String get dateFormat => _boxData.get('dateFormat') ?? 'dd/MM/YYYY';
 
   @override
   set timeFormat(String value) => _boxData.put('timeFormat', value);
 
   @override
-  String get timeFormat => _boxData.get('timeFormat') ?? 'en';
+  String get timeFormat => _boxData.get('timeFormat') ?? 'HH:mm';
 
   // Future saveAccountToken(AccountToken token) async {
   //   await Future.wait([

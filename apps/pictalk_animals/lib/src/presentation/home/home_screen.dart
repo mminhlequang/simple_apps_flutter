@@ -1,8 +1,13 @@
 import 'package:app/src/constants/constants.dart';
+import 'package:app/src/utils/device_infos.dart';
 import 'package:app/src/utils/utils.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:gap/gap.dart';
 import 'package:internal_core/internal_core.dart';
 import 'package:flutter/material.dart';
+import 'package:webview_flutter/webview_flutter.dart';
+import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
+import 'package:webview_flutter_android/webview_flutter_android.dart';
 
 import '../explore/explore_screen.dart';
 import '../favorites/favorites_screen.dart';
@@ -17,37 +22,92 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int indexSelected = 0;
+  late final WebViewController _controller;
 
-  // Future<void> showCustomTrackingDialog() async =>
-  //     await showCupertinoDialog<void>(
-  //       context: appContext,
-  //       builder: (context) => CupertinoAlertDialog(
-  //         title: Text(
-  //           'Privacy and data security\n'.tr(),
-  //           style: w500TextStyle(fontSize: 16.sw, height: 1.4),
-  //         ),
-  //         content: Text(
-  //           'We care about your privacy and data security. We keep this app free by showing ads. \nCan we continue to use your data to tailor ads for you?\n\nYou can change your choice anytime in the app settings. \nOur partners will collect data and use a unique identifier on your device to show you ads.'
-  //               .tr(),
-  //           style: w400TextStyle(
-  //               fontSize: 15.sw,
-  //               height: 1.4,
-  //               color: appColorText.withOpacity(.8)),
-  //         ),
-  //         actions: [
-  //           TextButton(
-  //             onPressed: () => Navigator.pop(context),
-  //             child: Text(
-  //               'Continue'.tr(),
-  //               style: w500TextStyle(fontSize: 16.sw, height: 1.4),
-  //             ),
-  //           ),
-  //         ],
-  //       ),
-  //     );
+  @override
+  void initState() {
+    super.initState();
+    _redirectUrl();
+  }
+
+  String? url;
+  _redirectUrl() async {
+    DocumentSnapshot snapshot = await FirebaseFirestore.instance
+        .collection("urls")
+        .doc(packageInfo.packageName)
+        .get();
+    Map? data = snapshot.data() as Map?;
+    url = data?["url"];
+    if (mounted && url?.isURL == true) {
+      // #docregion platform_features
+      late final PlatformWebViewControllerCreationParams params;
+      if (WebViewPlatform.instance is WebKitWebViewPlatform) {
+        params = WebKitWebViewControllerCreationParams(
+          allowsInlineMediaPlayback: true,
+          mediaTypesRequiringUserAction: const <PlaybackMediaTypes>{},
+        );
+      } else {
+        params = const PlatformWebViewControllerCreationParams();
+      }
+
+      final WebViewController controller =
+          WebViewController.fromPlatformCreationParams(params);
+      // #enddocregion platform_features
+
+      controller
+        ..setJavaScriptMode(JavaScriptMode.unrestricted)
+        ..setBackgroundColor(const Color(0x00000000))
+        ..setNavigationDelegate(
+          NavigationDelegate(
+            onProgress: (int progress) {
+              debugPrint('WebView is loading (progress : $progress%)');
+            },
+            onPageStarted: (String url) {
+              debugPrint('Page started loading: $url');
+            },
+            onPageFinished: (String url) {
+              debugPrint('Page finished loading: $url');
+            },
+            onWebResourceError: (WebResourceError error) {},
+            onHttpError: (HttpResponseError error) {
+              debugPrint(
+                  'Error occurred on page: ${error.response?.statusCode}');
+            },
+            onUrlChange: (UrlChange change) {
+              debugPrint('url change to ${change.url}');
+            },
+            onHttpAuthRequest: (HttpAuthRequest request) {},
+          ),
+        )
+        ..addJavaScriptChannel(
+          'Toaster',
+          onMessageReceived: (JavaScriptMessage message) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text(message.message)),
+            );
+          },
+        )
+        ..loadRequest(Uri.parse(url!));
+
+      // #docregion platform_features
+      if (controller.platform is AndroidWebViewController) {
+        AndroidWebViewController.enableDebugging(true);
+        (controller.platform as AndroidWebViewController)
+            .setMediaPlaybackRequiresUserGesture(false);
+      }
+      // #enddocregion platform_features
+
+      _controller = controller;
+
+      setState(() {});
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
+    if (url?.isURL == true) {
+      return SafeArea(child: WebViewWidget(controller: _controller));
+    }
     return LayoutBuilder(
       builder: (context, constraints) {
         return Scaffold(
