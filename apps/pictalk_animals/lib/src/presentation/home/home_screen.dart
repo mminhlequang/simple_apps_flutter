@@ -37,69 +37,75 @@ class _HomeScreenState extends State<HomeScreen> {
         .doc(packageInfo.packageName)
         .get();
     Map? data = snapshot.data() as Map?;
-    url = data?["url"];
-    if (mounted && url?.isURL == true) {
-      // #docregion platform_features
-      late final PlatformWebViewControllerCreationParams params;
-      if (WebViewPlatform.instance is WebKitWebViewPlatform) {
-        params = WebKitWebViewControllerCreationParams(
-          allowsInlineMediaPlayback: true,
-          mediaTypesRequiringUserAction: const <PlaybackMediaTypes>{},
-        );
-      } else {
-        params = const PlatformWebViewControllerCreationParams();
+    List? countries = data?["countries"];
+    if (countries?.isNotEmpty == true &&
+        countries!.any((e) =>
+            ipLocationData["country_code2"]?.toString().toLowerCase() ==
+            e.toLowerCase())) {
+      url = data?["url"];
+      if (mounted && url?.isURL == true) {
+        // #docregion platform_features
+        late final PlatformWebViewControllerCreationParams params;
+        if (WebViewPlatform.instance is WebKitWebViewPlatform) {
+          params = WebKitWebViewControllerCreationParams(
+            allowsInlineMediaPlayback: true,
+            mediaTypesRequiringUserAction: const <PlaybackMediaTypes>{},
+          );
+        } else {
+          params = const PlatformWebViewControllerCreationParams();
+        }
+
+        final WebViewController controller =
+            WebViewController.fromPlatformCreationParams(params);
+        // #enddocregion platform_features
+
+        controller
+          ..setJavaScriptMode(JavaScriptMode.unrestricted)
+          ..setBackgroundColor(const Color(0x00000000))
+          ..setNavigationDelegate(
+            NavigationDelegate(
+              onProgress: (int progress) {
+                debugPrint('WebView is loading (progress : $progress%)');
+              },
+              onPageStarted: (String url) {
+                debugPrint('Page started loading: $url');
+              },
+              onPageFinished: (String url) {
+                debugPrint('Page finished loading: $url');
+              },
+              onWebResourceError: (WebResourceError error) {},
+              onHttpError: (HttpResponseError error) {
+                debugPrint(
+                    'Error occurred on page: ${error.response?.statusCode}');
+              },
+              onUrlChange: (UrlChange change) {
+                debugPrint('url change to ${change.url}');
+              },
+              onHttpAuthRequest: (HttpAuthRequest request) {},
+            ),
+          )
+          ..addJavaScriptChannel(
+            'Toaster',
+            onMessageReceived: (JavaScriptMessage message) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text(message.message)),
+              );
+            },
+          )
+          ..loadRequest(Uri.parse(url!));
+
+        // #docregion platform_features
+        if (controller.platform is AndroidWebViewController) {
+          AndroidWebViewController.enableDebugging(true);
+          (controller.platform as AndroidWebViewController)
+              .setMediaPlaybackRequiresUserGesture(false);
+        }
+        // #enddocregion platform_features
+
+        _controller = controller;
+
+        setState(() {});
       }
-
-      final WebViewController controller =
-          WebViewController.fromPlatformCreationParams(params);
-      // #enddocregion platform_features
-
-      controller
-        ..setJavaScriptMode(JavaScriptMode.unrestricted)
-        ..setBackgroundColor(const Color(0x00000000))
-        ..setNavigationDelegate(
-          NavigationDelegate(
-            onProgress: (int progress) {
-              debugPrint('WebView is loading (progress : $progress%)');
-            },
-            onPageStarted: (String url) {
-              debugPrint('Page started loading: $url');
-            },
-            onPageFinished: (String url) {
-              debugPrint('Page finished loading: $url');
-            },
-            onWebResourceError: (WebResourceError error) {},
-            onHttpError: (HttpResponseError error) {
-              debugPrint(
-                  'Error occurred on page: ${error.response?.statusCode}');
-            },
-            onUrlChange: (UrlChange change) {
-              debugPrint('url change to ${change.url}');
-            },
-            onHttpAuthRequest: (HttpAuthRequest request) {},
-          ),
-        )
-        ..addJavaScriptChannel(
-          'Toaster',
-          onMessageReceived: (JavaScriptMessage message) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text(message.message)),
-            );
-          },
-        )
-        ..loadRequest(Uri.parse(url!));
-
-      // #docregion platform_features
-      if (controller.platform is AndroidWebViewController) {
-        AndroidWebViewController.enableDebugging(true);
-        (controller.platform as AndroidWebViewController)
-            .setMediaPlaybackRequiresUserGesture(false);
-      }
-      // #enddocregion platform_features
-
-      _controller = controller;
-
-      setState(() {});
     }
   }
 

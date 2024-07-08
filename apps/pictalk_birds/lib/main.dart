@@ -10,6 +10,7 @@ import 'package:flutter_portal/flutter_portal.dart';
 
 import 'internal_setup.dart';
 import 'src/base/bloc.dart';
+import 'src/utils/device_infos.dart';
 import 'src/utils/utils.dart';
 
 void main() async {
@@ -22,6 +23,7 @@ void main() async {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]),
     AppPrefs.instance.initialize(),
     initEasyLocalization(),
+    initPlatformState(),
   ]);
   bloc.Bloc.observer = AppBlocObserver();
 
