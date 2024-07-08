@@ -1,7 +1,7 @@
 name: app
 description: PicTalk Fruits 
 
-version: 1.0.0+1
+version: 1.0.0+2
 
 environment:
   sdk: ">=3.4.0 <4.0.0"
@@ -42,6 +42,14 @@ dependencies:
   blurhash: ^1.1.1
   flutter_switch: ^0.3.2
   flutter_tts: ^4.0.2
+  
+  device_info_plus: ^10.1.0
+  client_information: ^2.1.4
+  dart_ipify: ^1.1.1
+  package_info_plus: ^8.0.0
+  cloud_firestore: ^5.0.2
+  firebase_core: ^3.1.1
+  webview_flutter: ^4.8.0
 
   internal_core: 
     path: internal_libs/core
