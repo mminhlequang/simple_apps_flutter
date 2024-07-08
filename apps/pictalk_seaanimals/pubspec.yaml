@@ -44,7 +44,7 @@ dependencies:
   flutter_tts: ^4.0.2
 
   internal_core: 
-    path: internal_libs/core
+    path: ../internal_libs/core
 
 dependency_overrides:
   http: ^1.1.0

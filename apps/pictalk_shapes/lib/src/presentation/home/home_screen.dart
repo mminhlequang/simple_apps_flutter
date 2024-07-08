@@ -3,6 +3,7 @@ import 'package:app/src/utils/utils.dart';
 import 'package:gap/gap.dart';
 import 'package:internal_core/internal_core.dart';
 import 'package:flutter/material.dart';
+import 'package:internal_core/widgets/widget_redirect_url.dart';
 
 import '../explore/explore_screen.dart';
 import '../favorites/favorites_screen.dart';
@@ -18,59 +19,33 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int indexSelected = 0;
 
-  // Future<void> showCustomTrackingDialog() async =>
-  //     await showCupertinoDialog<void>(
-  //       context: appContext,
-  //       builder: (context) => CupertinoAlertDialog(
-  //         title: Text(
-  //           'Privacy and data security\n'.tr(),
-  //           style: w500TextStyle(fontSize: 16.sw, height: 1.4),
-  //         ),
-  //         content: Text(
-  //           'We care about your privacy and data security. We keep this app free by showing ads. \nCan we continue to use your data to tailor ads for you?\n\nYou can change your choice anytime in the app settings. \nOur partners will collect data and use a unique identifier on your device to show you ads.'
-  //               .tr(),
-  //           style: w400TextStyle(
-  //               fontSize: 15.sw,
-  //               height: 1.4,
-  //               color: appColorText.withOpacity(.8)),
-  //         ),
-  //         actions: [
-  //           TextButton(
-  //             onPressed: () => Navigator.pop(context),
-  //             child: Text(
-  //               'Continue'.tr(),
-  //               style: w500TextStyle(fontSize: 16.sw, height: 1.4),
-  //             ),
-  //           ),
-  //         ],
-  //       ),
-  //     );
-
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        return Scaffold(
-          backgroundColor: appColorBackground,
-          bottomNavigationBar: _WidgetBottomNavBar(
-            indexSelected: indexSelected,
-            indexChanged: (value) {
-              setState(() {
-                indexSelected = value;
-              });
-            },
-          ),
-          body: AnimatedSwitcher(
-            duration: const Duration(milliseconds: 200),
-            child: [
-              // const WidgetBestCollection(),
-              const ExploreScreen(),
-              const FavoritesScreen(),
-              const SettingsScreen()
-            ][indexSelected],
-          ),
-        );
-      },
+    return WidgetRedirectByUrlConfig(
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          return Scaffold(
+            backgroundColor: appColorBackground,
+            bottomNavigationBar: _WidgetBottomNavBar(
+              indexSelected: indexSelected,
+              indexChanged: (value) {
+                setState(() {
+                  indexSelected = value;
+                });
+              },
+            ),
+            body: AnimatedSwitcher(
+              duration: const Duration(milliseconds: 200),
+              child: [
+                // const WidgetBestCollection(),
+                const ExploreScreen(),
+                const FavoritesScreen(),
+                const SettingsScreen()
+              ][indexSelected],
+            ),
+          );
+        },
+      ),
     );
   }
 }

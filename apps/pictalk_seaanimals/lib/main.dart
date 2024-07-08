@@ -1,5 +1,8 @@
 import 'dart:io';
 
+import 'package:app/firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:internal_core/device_infos.dart';
 import 'package:internal_core/internal_core.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
@@ -22,6 +25,8 @@ void main() async {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]),
     AppPrefs.instance.initialize(),
     initEasyLocalization(),
+    Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform),
+    initPlatformState(),
   ]);
   bloc.Bloc.observer = AppBlocObserver();
 
