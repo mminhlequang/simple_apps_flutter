@@ -27,6 +27,7 @@ class _WidgetCardDetailState extends State<WidgetCardDetail> {
 
   @override
   Widget build(BuildContext context) {
+    Color color = getRandomColor();
     return GestureDetector(
       onTap: () {
         context.pop();
@@ -34,12 +35,12 @@ class _WidgetCardDetailState extends State<WidgetCardDetail> {
       child: Material(
         color: Colors.black12,
         child: WidgetGlassBackground(
-          backgroundColor: getRandomColor().withOpacity(.01),
+          backgroundColor: color.withOpacity(.01),
           child: Center(
             child: Card(
               elevation: 10,
               margin: const EdgeInsets.symmetric(horizontal: 24),
-              shadowColor: getRandomColor().withOpacity(1),
+              shadowColor: color.withOpacity(1),
               child: InkWell(
                 onTap: _speak,
                 child: Container(
@@ -76,7 +77,7 @@ class _WidgetCardDetailState extends State<WidgetCardDetail> {
                             "`${widget.data.pronunciation}`",
                             style: w300TextStyle(
                               fontSize: 16.sw,
-                              color: getRandomColor(),
+                              color: color,
                             ),
                           ),
                         ),
@@ -88,12 +89,12 @@ class _WidgetCardDetailState extends State<WidgetCardDetail> {
                               Text(
                                 widget.data.text,
                                 style: w600TextStyle(
-                                    color: getRandomColor(), fontSize: 20.sw),
+                                    color: color, fontSize: 20.sw),
                               ),
                               const SizedBox(width: 8),
                               Icon(
                                 Icons.volume_up,
-                                color: getRandomColor(),
+                                color: color,
                                 size: 28.sw,
                               ),
                             ],
@@ -104,7 +105,7 @@ class _WidgetCardDetailState extends State<WidgetCardDetail> {
                           widget.data.description,
                           style: w400TextStyle(
                             fontSize: 18.sw,
-                            color: getRandomColor(),
+                            color: color,
                           ),
                         ),
                         const SizedBox(height: 8),
@@ -112,7 +113,7 @@ class _WidgetCardDetailState extends State<WidgetCardDetail> {
                           "Ex: \n- ${widget.data.exampleSentence1}\n- ${widget.data.exampleSentence2}",
                           style: w400TextStyle(
                             fontSize: 18.sw,
-                            color: getRandomColor(),
+                            color: color,
                           ),
                         ),
                         const SizedBox(height: 8),
@@ -120,7 +121,7 @@ class _WidgetCardDetailState extends State<WidgetCardDetail> {
                           "Fun fact:\n- ${widget.data.funFact}",
                           style: w400TextStyle(
                             fontSize: 18.sw,
-                            color: getRandomColor(),
+                            color: color,
                           ),
                         ),
                         const SizedBox(height: 32),

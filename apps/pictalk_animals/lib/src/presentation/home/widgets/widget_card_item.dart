@@ -29,10 +29,11 @@ class _WidgetCardItemState extends State<WidgetCardItem> {
 
   @override
   Widget build(BuildContext context) {
+    Color color = getRandomColor();
     return Card(
       elevation: 10,
       margin: EdgeInsets.zero,
-      shadowColor: getRandomColor().withOpacity(.2),
+      shadowColor: color.withOpacity(.2),
       child: InkWell(
         onTap: () {
           appHaptic();
@@ -105,7 +106,7 @@ class _WidgetCardItemState extends State<WidgetCardItem> {
                 "`${widget.data.pronunciation}`",
                 style: w300TextStyle(
                   fontSize: 14.sw,
-                  color: getRandomColor(),
+                  color: color,
                 ),
               ),
               Row(
@@ -116,13 +117,13 @@ class _WidgetCardItemState extends State<WidgetCardItem> {
                     style: TextStyle(
                       fontSize: 18.sw, // Responsive text size
                       fontWeight: FontWeight.bold,
-                      color: getRandomColor(),
+                      color: color,
                     ),
                   ),
                   IconButton(
                     icon: Icon(
                       Icons.volume_up,
-                      color: getRandomColor(),
+                      color: color,
                       size: 32,
                     ),
                     onPressed: _speak,
