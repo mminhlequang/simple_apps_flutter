@@ -20,7 +20,6 @@ class WidgetRedirectByUrlConfig extends StatefulWidget {
 }
 
 class _WidgetRedirectByUrlConfigState extends State<WidgetRedirectByUrlConfig> {
-  int indexSelected = 0;
   late final WebViewController _controller;
   WebViewController? _controllerHiden;
 

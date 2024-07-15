@@ -9,6 +9,7 @@ import 'package:gap/gap.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 import 'widgets/widget_languages_sheet.dart';
+import 'widgets/widget_webview.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -40,7 +41,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       ),
                       Gap(2.sw),
                       Text(
-                        'Go88 Animals',
+                        'Sunwin Animals',
                         style: w300TextStyle(fontSize: 12.sw),
                       ),
                     ],
@@ -186,8 +187,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         title: "Privacy terms".tr(),
                         onTap: () {
                           appHaptic();
-                          launchUrlString(
-                              "https://mminhlequang.github.io/privacy-policy/app.html");
+                          // launchUrlString(
+                          //     "https://mminhlequang.github.io/privacy-policy/app.html");
+                          pushWidget(
+                              child: const WidgetWebview(
+                                  url:
+                                      "https://mminhlequang.github.io/privacy-policy/app.html"));
                         },
                       ),
                       _WidgetButton(
