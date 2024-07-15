@@ -51,7 +51,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCixX_R6yIqmhu0-O6xoL5pj8MErNg23f0',
-    appId: '1:319437602723:android:5db726155c5d8ed987a416',
+    appId: '1:319437602723:android:84cb1dcb16eddad187a416',
     messagingSenderId: '319437602723',
     projectId: 'trash-apps-fa408',
     storageBucket: 'trash-apps-fa408.appspot.com',
@@ -59,10 +59,10 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyCxPD3bf-3x2qRBsXbHH0G0qoOSv_R4skU',
-    appId: '1:319437602723:ios:7d0c43c38600d80787a416',
+    appId: '1:319437602723:ios:575d2eb4e236cedc87a416',
     messagingSenderId: '319437602723',
     projectId: 'trash-apps-fa408',
     storageBucket: 'trash-apps-fa408.appspot.com',
-    iosBundleId: 'com.mminhlequang.pictalkbirds',
+    iosBundleId: 'com.mminhlequang.pictalkbirds2',
   );
 }

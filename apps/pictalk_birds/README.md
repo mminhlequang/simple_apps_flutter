@@ -9,7 +9,7 @@
 #### SubTitlePage2: Saved impressive birds
 
 #### AppName: PicTalk: Birds
-#### AppID: com.mminhlequang.pictalkbirds
+#### AppID: com.mminhlequang.pictalkbirds2
 #### PackageName: app
 #### PackageDesc: PicTalk Birds
 

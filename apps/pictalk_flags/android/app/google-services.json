@@ -1,0 +1,200 @@
+{
+  "project_info": {
+    "project_number": "319437602723",
+    "project_id": "trash-apps-fa408",
+    "storage_bucket": "trash-apps-fa408.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319437602723:android:5db726155c5d8ed987a416",
+        "android_client_info": {
+          "package_name": "com.mminhlequang.pictalkbirds"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCixX_R6yIqmhu0-O6xoL5pj8MErNg23f0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319437602723:android:e5506daf05ce582587a416",
+        "android_client_info": {
+          "package_name": "com.mminhlequang.pictalkemojis"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCixX_R6yIqmhu0-O6xoL5pj8MErNg23f0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319437602723:android:4302a6bb3ec7a53687a416",
+        "android_client_info": {
+          "package_name": "com.mminhlequang.pictalkflags"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCixX_R6yIqmhu0-O6xoL5pj8MErNg23f0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319437602723:android:30bc327bc9689c7987a416",
+        "android_client_info": {
+          "package_name": "com.mminhlequang.pictalkfruits"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCixX_R6yIqmhu0-O6xoL5pj8MErNg23f0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319437602723:android:d2b4912bbbbb149f87a416",
+        "android_client_info": {
+          "package_name": "com.mminhlequang.pictalkjobs"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCixX_R6yIqmhu0-O6xoL5pj8MErNg23f0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319437602723:android:2deb2bcc8232b15987a416",
+        "android_client_info": {
+          "package_name": "com.mminhlequang.pictalkseaanimals"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCixX_R6yIqmhu0-O6xoL5pj8MErNg23f0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319437602723:android:34697084ecaad77587a416",
+        "android_client_info": {
+          "package_name": "com.mminhlequang.pictalkshapes"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCixX_R6yIqmhu0-O6xoL5pj8MErNg23f0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319437602723:android:af09cae38eb0a8c487a416",
+        "android_client_info": {
+          "package_name": "com.mminhlequang.pictalkweathers"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCixX_R6yIqmhu0-O6xoL5pj8MErNg23f0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319437602723:android:7eb9bb1532279c8987a416",
+        "android_client_info": {
+          "package_name": "com.mminhlequang.skidanimals"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCixX_R6yIqmhu0-O6xoL5pj8MErNg23f0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319437602723:android:4087ce2d999bd81d87a416",
+        "android_client_info": {
+          "package_name": "com.mminhlequang.skidvegetables"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCixX_R6yIqmhu0-O6xoL5pj8MErNg23f0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
