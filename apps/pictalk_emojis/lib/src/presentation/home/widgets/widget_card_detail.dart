@@ -1,13 +1,9 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:go_router/go_router.dart';
 import 'package:internal_core/internal_core.dart';
 
 import 'package:app/src/constants/constants.dart';
-import 'package:app/src/presentation/widgets/widgets.dart';
 import 'package:app/src/utils/utils.dart';
 
 import 'widget_card_item.dart';
