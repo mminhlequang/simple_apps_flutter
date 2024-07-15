@@ -63,6 +63,6 @@ class DefaultFirebaseOptions {
     messagingSenderId: '319437602723',
     projectId: 'trash-apps-fa408',
     storageBucket: 'trash-apps-fa408.appspot.com',
-    iosBundleId: 'com.mminhlequang.skidanimals',
+    iosBundleId: 'com.mminh.go88animals',
   );
 }
