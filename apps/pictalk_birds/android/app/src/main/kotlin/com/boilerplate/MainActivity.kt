@@ -1,4 +1,4 @@
-package com.mminhlequang.pictalkbirds
+package com.mminhlequang.pictalkbirds2
 
 import io.flutter.embedding.android.FlutterActivity
 
