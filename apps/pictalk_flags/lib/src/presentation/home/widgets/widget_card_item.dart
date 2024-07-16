@@ -41,6 +41,7 @@ class _WidgetCardItemState extends State<WidgetCardItem> {
           pushWidget(child: WidgetCardDetail(data: widget.data), opaque: false);
         },
         child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 12.sw),
           decoration: const BoxDecoration(color: Colors.white),
           child: Column(
             children: [
@@ -55,6 +56,7 @@ class _WidgetCardItemState extends State<WidgetCardItem> {
                         child: WidgetAppSVG(
                           "assets/images/svg/countries/country_${widget.data.imagePath}",
                           fit: BoxFit.fitWidth,
+                          width: 80,
                         ),
                       ),
                     ),
@@ -102,26 +104,21 @@ class _WidgetCardItemState extends State<WidgetCardItem> {
                   color: color,
                 ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    widget.data.text,
-                    style: TextStyle(
-                      fontSize: 18.sw, // Responsive text size
-                      fontWeight: FontWeight.bold,
-                      color: color,
-                    ),
-                  ),
-                  IconButton(
-                    icon: Icon(
-                      Icons.volume_up,
-                      color: color,
-                      size: 32,
-                    ),
-                    onPressed: _speak,
-                  ),
-                ],
+              Text(
+                widget.data.text,
+                style: TextStyle(
+                  fontSize: 18.sw, // Responsive text size
+                  fontWeight: FontWeight.bold,
+                  color: color,
+                ),
+              ),
+              IconButton(
+                icon: Icon(
+                  Icons.volume_up,
+                  color: color,
+                  size: 32,
+                ),
+                onPressed: _speak,
               ),
             ],
           ),

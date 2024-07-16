@@ -13,4 +13,4 @@
 #### PackageName: app
 #### PackageDesc: PicTalk Flags
 
-#### Background Color: F2F2F2
+#### Background Color: FEE3E6

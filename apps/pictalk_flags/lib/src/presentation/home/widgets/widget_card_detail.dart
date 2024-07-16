@@ -58,6 +58,7 @@ class _WidgetCardDetailState extends State<WidgetCardDetail> {
                           child: WidgetAppSVG(
                             "assets/images/svg/countries/country_${widget.data.imagePath}",
                             fit: BoxFit.fitWidth,
+                            width: 120,
                           ),
                         ),
                       ),
