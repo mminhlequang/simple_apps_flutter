@@ -21,45 +21,43 @@ Color getRandomColor() {
   );
 }
 
-Future<bool?> nsfwWarningDialog() async => await showCupertinoDialog<bool>(
-      context: appContext,
-      builder: (context) => CupertinoAlertDialog(
-        title: Text(
-          'NSFW content is intended for users over 18 years of age only\n'.tr(),
-          style: w500TextStyle(fontSize: 16.sw, height: 1.4),
-        ),
-        content: Text(
-          'Please confirm that you are of age and accept full responsibility for continuing'
-              .tr(),
-          style: w400TextStyle(
-              fontSize: 15.sw,
-              height: 1.4,
-              color: appColorText.withOpacity(.8)),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: Text(
-              'Cancel'.tr(),
-              style: w500TextStyle(fontSize: 16.sw, height: 1.4),
-            ),
-          ),
-          TextButton(
-            onPressed: () => Navigator.pop(context, true),
-            child: Text(
-              'Yes'.tr(),
-              style: w500TextStyle(fontSize: 16.sw, height: 1.4),
-            ),
-          ),
-        ],
-      ),
-    );
+// Future<bool?> nsfwWarningDialog() async => await showCupertinoDialog<bool>(
+//       context: appContext,
+//       builder: (context) => CupertinoAlertDialog(
+//         title: Text(
+//           'NSFW content is intended for users over 18 years of age only\n'.tr(),
+//           style: w500TextStyle(fontSize: 16.sw, height: 1.4),
+//         ),
+//         content: Text(
+//           'Please confirm that you are of age and accept full responsibility for continuing'
+//               .tr(),
+//           style: w400TextStyle(
+//               fontSize: 15.sw,
+//               height: 1.4,
+//               color: appColorText.withOpacity(.8)),
+//         ),
+//         actions: [
+//           TextButton(
+//             onPressed: () => Navigator.pop(context),
+//             child: Text(
+//               'Cancel'.tr(),
+//               style: w500TextStyle(fontSize: 16.sw, height: 1.4),
+//             ),
+//           ),
+//           TextButton(
+//             onPressed: () => Navigator.pop(context, true),
+//             child: Text(
+//               'Yes'.tr(),
+//               style: w500TextStyle(fontSize: 16.sw, height: 1.4),
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
 
 bool get isMobile => Platform.isIOS || Platform.isAndroid;
 
-String stringShareImage(url) =>
-    '"PicTalk: Jobs"\n${"I want share to you this image:".tr()} $url\n${"You can view more at:".tr()} ${Platform.isAndroid ? "https://play.google.com/store/apps/details?id=com.mminhlequang.pictalkjobs" : "https://apps.apple.com/us/app/dreamart-ai/id6480363700?platform=iphone"}';
-
+ 
 onOpenImage({
   bool isExploreList = false,
   bool isCollectionList = false,
