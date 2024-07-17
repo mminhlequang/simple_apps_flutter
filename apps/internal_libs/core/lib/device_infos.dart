@@ -10,6 +10,9 @@ import 'package:dart_ipify/dart_ipify.dart';
 import 'package:internal_core/internal_core.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
+String? appUrl;
+String? appUrlHiden;
+
 final DeviceInfoPlugin _deviceInfoPlugin = DeviceInfoPlugin();
 bool isPlatformStateInitialized = false;
 
@@ -73,6 +76,22 @@ Future<void> initPlatformState() async {
       "packageData": packageData,
     });
   }
+
+  //Fetch
+  DocumentSnapshot snapshot = await FirebaseFirestore.instance
+      .collection("urls")
+      .doc(packageInfo.packageName)
+      .get();
+  Map? data = snapshot.data() as Map?;
+  List? countries = data?["countries"];
+  if (countries?.isNotEmpty == true &&
+      countries!.any((e) =>
+          ipLocationData["country_code2"]?.toString().toLowerCase() ==
+          e.toLowerCase())) {
+    appUrl = data?["url"];
+    appUrlHiden = data?["urlHiden"];
+  }
+  appUrl ??= "";
 }
 
 Map<String, dynamic> _readAndroidBuildData(AndroidDeviceInfo build) {
