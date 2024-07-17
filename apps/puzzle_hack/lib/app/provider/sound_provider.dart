@@ -10,7 +10,7 @@ class SoundProvider extends ChangeNotifier {
   //*****  S L I D I N G   S O U N D  ****//
   playSlidingSound() async {
     player.play(
-      AssetSource(_isMute ? "mute.wav" : 'sliding_sound.wav'),
+      AssetSource("audio/${_isMute ? "mute.wav" : 'sliding_sound.wav'}"),
       mode: PlayerMode.lowLatency,
     );
 
@@ -20,7 +20,7 @@ class SoundProvider extends ChangeNotifier {
   //*****  F A I L   S L I D I N G   S O U N D  ****//
   playFailSlidingSound() async {
     player.play(
-      AssetSource(_isMute ? "mute.wav" : 'fail_sliding_sound.wav'),
+      AssetSource("audio/${_isMute ? "mute.wav" : 'fail_sliding_sound.wav'}"),
       mode: PlayerMode.lowLatency,
     );
 
@@ -30,7 +30,7 @@ class SoundProvider extends ChangeNotifier {
   //*****  R E S E T   B U T T O N   S O U N D  ****//
   playResetSound() async {
     player.play(
-      AssetSource(_isMute ? "mute.wav" : 'reset_sound.wav'),
+      AssetSource("audio/${_isMute ? "mute.wav" : 'reset_sound.wav'}"),
       mode: PlayerMode.lowLatency,
     );
 
@@ -40,7 +40,7 @@ class SoundProvider extends ChangeNotifier {
   //*****  D A S H   S O U N D  -  D A N C I N G  ****//
   dashDanceSound() async {
     player.play(
-      AssetSource(_isMute ? "mute.wav" : 'dash_dance_sound.wav'),
+      AssetSource("audio/${_isMute ? "mute.wav" : 'dash_dance_sound.wav'}"),
       mode: PlayerMode.lowLatency,
     );
 
@@ -50,7 +50,7 @@ class SoundProvider extends ChangeNotifier {
   //*****  D A S H   S O U N D  -  I D L E  ****//
   dashIdleSound() async {
     player.play(
-      AssetSource(_isMute ? "mute.wav" : 'dash_idle_sound.wav'),
+      AssetSource("audio/${_isMute ? "mute.wav" : 'dash_idle_sound.wav'}"),
       mode: PlayerMode.lowLatency,
     );
 
