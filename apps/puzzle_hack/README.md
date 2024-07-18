@@ -39,7 +39,7 @@
   </table>
 
   <p align="justify">
-   The above picture is showing the "Puzzle Hack" game running on an android device. It's also presenting all the functionality of the game. Like: 
+   The above picture is showing the "68GB Puzzles" game running on an android device. It's also presenting all the functionality of the game. Like: 
   </p>
 
 1. Dark/Light mode switch
@@ -53,7 +53,7 @@
 <p align="Center">
     <a href="https://md-siam.github.io/puzzle_hack/" target="_blank"><img src="screenshots/images/PlayNow.png"/></a>
 </p>
-## Puzzle Hack Demo
+## 68GB Puzzles Demo
 
 <table align="center" style="margin: 0px auto;">
   <tr>

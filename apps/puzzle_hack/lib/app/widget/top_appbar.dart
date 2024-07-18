@@ -12,7 +12,7 @@ import 'util/dropdown_menu.dart';
 
 // ignore: must_be_immutable
 class TopAppBar extends StatefulWidget implements PreferredSizeWidget {
-  TopAppBar({Key? key}) : super(key: key);
+  const TopAppBar({super.key});
 
   @override
   State<TopAppBar> createState() => _TopAppBarState();
@@ -31,83 +31,25 @@ class _TopAppBarState extends State<TopAppBar> {
         builder: (context, themeProvider, child) {
           return Consumer<SoundProvider>(
             builder: (context, soundProvider, child) {
-              return Stack(
-                children: [
-                  ResponsiveVisibility(
-                    visible: false,
-                    // visibleConditions: const [Condition.smallerThan(name: MOBILE)],
-                    // child: DayNightSwitcherIcon(
-                    //   dayBackgroundColor: const Color(0xFF0C91D6),
-                    //   isDarkModeEnabled: themeProvider.darkTheme,
-                    //   onStateChanged: (value) {
-                    //     widget.controller.isActive = true;
-                    //     themeProvider.darkTheme
-                    //         ? soundProvider.playLightSound()
-                    //         : soundProvider.playDarkSound();
-                    //     themeProvider.toggleTheme();
-                    //   },
-                    // ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 10, top: 10),
-                      child: CupertinoSwitch(
-                        value: switchValue,
-                        onChanged: (newValue) {
-                          themeProvider.darkTheme
-                              ? soundProvider.playLightSound()
-                              : soundProvider.playDarkSound();
-                          themeProvider.toggleTheme();
-                          switchValue = !switchValue;
-                        },
-                      ),
-                    ),
-                  ),
-                  ResponsiveVisibility(
-                    visible: false,
-                    visibleConditions: const [Condition.largerThan(name: 'ExSmall')],
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 5.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            width: 50.0,
-                            // child: DayNightSwitcher(
-                            //   dayBackgroundColor: const Color(0xFF0C91D6),
-                            //   isDarkModeEnabled: themeProvider.darkTheme,
-                            //   onStateChanged: (value) {
-                            //     widget.controller.isActive = true;
-                            //     themeProvider.darkTheme
-                            //         ? soundProvider.playLightSound()
-                            //         : soundProvider.playDarkSound();
-                            //     themeProvider.toggleTheme();
-                            //   },
-                            // ),
-                            child: Padding(
-                              padding: const EdgeInsets.only(top: 5.0),
-                              child: Switch.adaptive(
-                                value: switchValue,
-                                onChanged: (newValue) {
-                                  themeProvider.darkTheme
-                                      ? soundProvider.playLightSound()
-                                      : soundProvider.playDarkSound();
-                                  themeProvider.toggleTheme();
-                                  switchValue = !switchValue;
-                                },
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
+              return Padding(
+                padding: const EdgeInsets.only(left: 10, top: 10),
+                child: CupertinoSwitch(
+                  value: switchValue,
+                  onChanged: (newValue) {
+                    themeProvider.darkTheme
+                        ? soundProvider.playLightSound()
+                        : soundProvider.playDarkSound();
+                    themeProvider.toggleTheme();
+                    switchValue = !switchValue;
+                  },
+                ),
               );
             },
           );
         },
       ),
       title: Text(
-        'Puzzle Hack',
+        '68GB Puzzles',
         style: GoogleFonts.alata(
           textStyle: const TextStyle(letterSpacing: 2.0),
         ),

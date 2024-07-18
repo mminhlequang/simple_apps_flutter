@@ -11,7 +11,7 @@ class AppInfoProvider {
   Widget get applicationIcon => _applicationIcon;
 
   //** P R O V I D E S    A P P N A M E **//
-  final String _applicationName = 'Puzzle Hack';
+  final String _applicationName = '68GB Puzzles';
   String get applicationName => _applicationName;
 
   //** P R O V I D E S    A P P V E R S I O N **//

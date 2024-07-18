@@ -11,7 +11,7 @@ import '/app/provider/sound_provider.dart';
 import '../widget/picture_and_animation_row.dart';
 
 ///
-/// This is the [primary] dart file of the Puzzle Hack game
+/// This is the [primary] dart file of the 68GB Puzzles game
 /// it's using all the custom widgets like: `TopAppBar`, `WinningCard`,
 /// `SamplePictureAndAnimationRow` etc., and also has a `Rive` animation
 /// of flutter mascot [Dash].

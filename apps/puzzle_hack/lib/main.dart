@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
     return Consumer<ThemeProvider>(
       builder: (context, themeProvider, child) {
         return MaterialApp(
-          title: 'Puzzle Hack',
+          title: '68GB Puzzles',
           debugShowCheckedModeBanner: false,
           theme:
               themeProvider.darkTheme ? MyTheme.darkTheme : MyTheme.lightTheme,
