@@ -6,7 +6,7 @@
 
 # Real Jigsaw Puzzle
 
-Real Puzzle is a jigsaw puzzle game powered by Flutter and Flame.
+Go88 Puzzles is a jigsaw puzzle game powered by Flutter and Flame.
 App can run on Android iOS and Web ...
 
 [Play in Browser Jigsaw Game](https://jigsaw.xfans.me)

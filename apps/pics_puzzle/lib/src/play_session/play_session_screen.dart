@@ -56,20 +56,10 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
           centerTitle: true,
           backgroundColor: palette.backgroundMain,
           title: Text(
-            'Real Puzzle',
+            'Go88 Puzzles',
             style: TextStyle(fontSize: 28.sp, color: palette.textColor),
           ),
           actions: [
-            InkResponse(
-              onTap: () {
-                launchUrlString('https://github.com/xfans/app');
-              },
-              child: Icon(
-                Icons.code,
-                size: 40.sp,
-                color: palette.textColor,
-              ),
-            ),
             InkResponse(
               onTap: () {
                 showReset();

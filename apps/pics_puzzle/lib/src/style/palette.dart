@@ -3,6 +3,7 @@
 // BSD-style license that can be found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'package:internal_core/internal_core.dart';
 
 /// A palette of colors to be used in the game.
 ///
@@ -23,16 +24,13 @@ import 'package:flutter/material.dart';
 /// we could allow players to customize colors, for example,
 /// or even get the colors from the network.
 class Palette {
+  Color get backgroundMain => hexColor('3DC2EC');
 
-  Color get backgroundMain => const Color(0xffFFE0B3);
+  Color get textColor => hexColor('402E7A');
 
-  Color get textColor => const Color(0xff482C2B);
+  Color get btnOkColor => hexColor('F2613F');
 
-  Color get btnOkColor => const Color(0xff9C4DCC);
+  Color get tabSelectColor => hexColor('EEE4B1');
 
-  Color get tabSelectColor => const Color(0xffFFC857);
-
-  Color get tabUnSelectColor => const Color(0xffF9AFAF);
-
-
+  Color get tabUnSelectColor => hexColor('78A083');
 }

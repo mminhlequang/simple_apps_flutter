@@ -45,8 +45,7 @@ Future<void> main() async {
   });
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([
-    DeviceOrientation.landscapeRight,
-    DeviceOrientation.landscapeLeft,
+    DeviceOrientation.portraitUp,
   ]);
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge, overlays: []);
 
@@ -114,12 +113,7 @@ class MyApp extends StatelessWidget {
                 path: 'settings',
                 builder: (context, state) =>
                     const SettingsScreen(key: Key('settings')),
-                routes: [
-                  GoRoute(
-                    path: 'about',
-                    builder: (context, state) => const AboutScreen(),
-                  )
-                ]),
+                 ),
           ]),
     ],
   );
@@ -134,7 +128,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(1067, 750),
+      designSize: const Size(480, 758),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
@@ -171,7 +165,7 @@ class MyApp extends StatelessWidget {
 
               return MaterialApp.router(
                 builder: EasyLoading.init(),
-                title: 'Real Puzzle',
+                title: 'Go88 Puzzles',
                 theme: ThemeData.from(
                   colorScheme: ColorScheme.fromSeed(
                     seedColor: palette.btnOkColor,

@@ -7,7 +7,6 @@ import 'package:cherry_toast/cherry_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:app/src/http/api.dart';
 import 'package:app/src/http/dio_client.dart';
-import 'package:app/src/level_selection/piece_image.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
@@ -73,32 +72,23 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        leading: Container(),
+        leading: IconButton(
+            onPressed: () {
+              GoRouter.of(context).push('/settings');
+            },
+            icon: Icon(Icons.settings)),
         centerTitle: true,
         backgroundColor: palette.backgroundMain,
         title: Text(
-          'Real Puzzle',
-          style: TextStyle(fontSize: 28.sp, color: palette.textColor),
+          'Go88 Puzzles',
+          style: TextStyle(fontSize: 28, color: palette.textColor),
         ),
-        actions: [
-          IconButton(
-              onPressed: () {
-                GoRouter.of(context).push('/settings');
-              },
-              icon: Icon(Icons.settings)),
-        ],
       ),
       body: Center(
         child: Container(
           width: 0.9.sw,
           child: CustomScrollView(
             slivers: [
-              SliverToBoxAdapter(
-                  child: Center(
-                child: Text(
-                  'Photos provided by Pexels',
-                ),
-              )),
               buildPagedGridView(),
               SliverToBoxAdapter(
                   child: SizedBox(
@@ -121,7 +111,7 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
         childAspectRatio: 50 / 33,
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
-        crossAxisCount: 4,
+        crossAxisCount: 2,
       ),
       builderDelegate: PagedChildBuilderDelegate<JigsawInfo>(
         itemBuilder: (context, item, index) => JigsawGridItem(
@@ -141,7 +131,7 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
       btnOkColor: Palette().btnOkColor,
       context: context,
       animType: AnimType.scale,
-      width: 600.w,
+      width: 600,
       dialogType: DialogType.noHeader,
       body: StatefulBuilder(
         builder: (BuildContext context, StateSetter setState) {
@@ -156,8 +146,9 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
                 SizedBox(
                   height: 20.h,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                Wrap(
+                  spacing: 8,
+                  runSpacing: 8,
                   children: [
                     buildSelectGridSize(2, _gridSizeValue, (v) {
                       setState(() {
@@ -179,14 +170,6 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
                         _gridSizeValue = v;
                       });
                     }),
-                  ],
-                ),
-                SizedBox(
-                  height: 20.h,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
                     buildSelectGridSize(7, _gridSizeValue, (v) {
                       setState(() {
                         _gridSizeValue = v;
@@ -236,7 +219,7 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
         f(num);
       },
       child: Container(
-        width: 100.w,
+        width: 100,
         padding: EdgeInsets.only(left: 20.w, right: 20.w),
         margin: EdgeInsets.only(left: 8.w, right: 8.w),
         decoration: BoxDecoration(
