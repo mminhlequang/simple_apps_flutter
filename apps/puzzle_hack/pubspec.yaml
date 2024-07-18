@@ -45,12 +45,23 @@ dev_dependencies:
   flutter_launcher_icons: ^0.13.1
   flutter_lints: ^4.0.0
 
+
 flutter_icons:
   android: "ic_launcher"
   ios: true
   #ios
-  image_path: "assets/logo.jpg"
-  remove_alpha_ios: true
+  image_path: "assets/logo.png"
+  #android 
+  adaptive_icon_foreground: "assets/logo2.png"
+  adaptive_icon_background: "#F2F2F2"
+  macos:
+    generate: true
+    image_path: "assets/logo.png"
+
+flutter_native_splash:
+  color: "#F1FCFF"
+  image: assets/logo2.png
+  web: false
   
 
 flutter:
