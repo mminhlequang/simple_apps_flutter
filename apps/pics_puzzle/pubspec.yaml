@@ -1,0 +1,76 @@
+name: app
+description: A pic puzzle game
+ 
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.0.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  audioplayers: ^6.0.0
+  go_router: ^14.2.1
+  logging: ^1.2.0
+  provider: ^6.1.2
+  shared_preferences: ^2.2.3
+#  carousel_slider: ^4.2.1
+#  google_mobile_ads: ^3.0.0  # Ads
+  flame: 1.18.0
+  flame_audio: ^2.10.2
+  infinite_scroll_pagination: ^4.0.0
+  cached_network_image: ^3.3.1
+  flutter_cache_manager: ^3.3.2
+#  flutter_image_compress: ^2.0.3
+  flutter_screenutil: ^5.9.3
+  card_swiper: ^3.0.1
+  awesome_dialog: ^3.2.1
+  lottie: ^3.1.2
+  mime: ^1.0.5
+  cherry_toast: ^1.10.1
+  flutter_easyloading: ^3.0.5
+  url_launcher: ^6.3.0
+  package_info_plus: ^8.0.0
+  dio: ^5.4.3+1
+  connectivity_plus: ^6.0.3
+#  mixpanel_flutter: ^2.0.0
+
+  internal_core: 
+    path: ../internal_libs/core
+
+
+dev_dependencies:
+  flutter_native_splash: ^2.4.1
+  flutter_launcher_icons: ^0.13.1
+  flutter_lints: ^4.0.0
+
+
+flutter_icons:
+  android: "ic_launcher"
+  ios: true
+  #ios
+  image_path: "assets/logo.png"
+  #android 
+  adaptive_icon_foreground: "assets/logo2.png"
+  adaptive_icon_background: "#F2F2F2"
+  macos:
+    generate: true
+    image_path: "assets/logo.png"
+
+flutter_native_splash:
+  color: "#FFF0E5"
+  image: assets/logo2.png
+  web: false
+  
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/music/
+    - assets/sfx/
+    - assets/lottie/
+    - assets/audio/
