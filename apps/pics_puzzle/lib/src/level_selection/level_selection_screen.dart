@@ -198,15 +198,13 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
         },
       ),
       btnOk: Center(
-        child: Container(
-          width: 100.w,
-          child: ElevatedButton(
-            onPressed: () {
-              item.gridSize = _gridSizeValue;
-              GoRouter.of(context).go('/play/loading/', extra: item);
-            },
-            child: Text("Start"),
-          ),
+        child: ElevatedButton(
+          onPressed: () {
+            item.gridSize = _gridSizeValue;
+            context.pop();
+            GoRouter.of(context).go('/play/loading/', extra: item);
+          },
+          child: Text("Start"),
         ),
       ),
     )..show();

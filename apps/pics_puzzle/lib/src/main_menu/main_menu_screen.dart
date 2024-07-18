@@ -31,7 +31,7 @@ class MainMenuScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    'Puzzle Game',
+                    'Go88 Puzzles Game',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 55,
@@ -47,15 +47,6 @@ class MainMenuScreen extends StatelessWidget {
                       child: Text('Photos provided by Pexels'),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 20),
-                    child: InkWell(
-                      onTap: () {
-                        launchUrlString('https://github.com/xfans/app');
-                      },
-                      child: Text('https://github.com/xfans/app'),
-                    ),
-                  )
                 ],
               ),
             ),
