@@ -6,7 +6,7 @@
 
 # Real Jigsaw Puzzle
 
-Go88 Puzzles is a jigsaw puzzle game powered by Flutter and Flame.
+gotamtam puzzles is a jigsaw puzzle game powered by Flutter and Flame.
 App can run on Android iOS and Web ...
 
 [Play in Browser Jigsaw Game](https://jigsaw.xfans.me)

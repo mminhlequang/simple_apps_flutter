@@ -56,7 +56,7 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
           centerTitle: true,
           backgroundColor: palette.backgroundMain,
           title: Text(
-            'Go88 Puzzles',
+            'Puzzles',
             style: TextStyle(fontSize: 28.sp, color: palette.textColor),
           ),
           actions: [

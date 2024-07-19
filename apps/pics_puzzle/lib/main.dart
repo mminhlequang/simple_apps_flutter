@@ -110,10 +110,10 @@ class MyApp extends StatelessWidget {
                   ),
                 ]),
             GoRoute(
-                path: 'settings',
-                builder: (context, state) =>
-                    const SettingsScreen(key: Key('settings')),
-                 ),
+              path: 'settings',
+              builder: (context, state) =>
+                  const SettingsScreen(key: Key('settings')),
+            ),
           ]),
     ],
   );
@@ -165,7 +165,7 @@ class MyApp extends StatelessWidget {
 
               return MaterialApp.router(
                 builder: EasyLoading.init(),
-                title: 'Go88 Puzzles',
+                title: 'Puzzles',
                 theme: ThemeData.from(
                   colorScheme: ColorScheme.fromSeed(
                     seedColor: palette.btnOkColor,

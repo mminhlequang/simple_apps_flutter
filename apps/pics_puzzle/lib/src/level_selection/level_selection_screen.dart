@@ -80,7 +80,7 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
         centerTitle: true,
         backgroundColor: palette.backgroundMain,
         title: Text(
-          'Go88 Puzzles',
+          'Puzzles',
           style: TextStyle(fontSize: 28, color: palette.textColor),
         ),
       ),
