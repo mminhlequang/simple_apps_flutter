@@ -169,7 +169,7 @@ class MyApp extends StatelessWidget {
                 theme: ThemeData.from(
                   colorScheme: ColorScheme.fromSeed(
                     seedColor: palette.btnOkColor,
-                    background: palette.backgroundMain,
+                    onSurface: palette.backgroundMain,
                   ),
                   textTheme: TextTheme(
                     bodyMedium: TextStyle(
@@ -183,6 +183,7 @@ class MyApp extends StatelessWidget {
                 routerDelegate: _router.routerDelegate,
                 scaffoldMessengerKey: scaffoldMessengerKey,
                 showPerformanceOverlay: false,
+                debugShowCheckedModeBanner: false,
               );
             }),
           ),

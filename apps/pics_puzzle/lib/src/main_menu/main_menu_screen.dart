@@ -67,19 +67,19 @@ class MainMenuScreen extends StatelessWidget {
                 child: const Text('Settings'),
               ),
               _gap,
-              Padding(
-                padding: const EdgeInsets.only(top: 32),
-                child: ValueListenableBuilder<bool>(
-                  valueListenable: settingsController.muted,
-                  builder: (context, muted, child) {
-                    return IconButton(
-                      onPressed: () => settingsController.toggleSoundsOn(),
-                      icon: Icon(muted ? Icons.volume_off : Icons.volume_up),
-                    );
-                  },
-                ),
-              ),
-              _gap,
+              // Padding(
+              //   padding: const EdgeInsets.only(top: 32),
+              //   child: ValueListenableBuilder<bool>(
+              //     valueListenable: settingsController.muted,
+              //     builder: (context, muted, child) {
+              //       return IconButton(
+              //         onPressed: () => settingsController.toggleSoundsOn(),
+              //         icon: Icon(muted ? Icons.volume_off : Icons.volume_up),
+              //       );
+              //     },
+              //   ),
+              // ),
+              // _gap,
               // const Text('Music by Mr Smith'),
               // _gap,
             ],
