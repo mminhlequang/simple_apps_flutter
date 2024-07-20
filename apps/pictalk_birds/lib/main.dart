@@ -12,7 +12,7 @@ import 'package:flutter_bloc/flutter_bloc.dart' as bloc;
 import 'package:flutter_portal/flutter_portal.dart';
 
 import 'internal_setup.dart';
-import 'src/base/bloc.dart'; 
+import 'src/base/bloc.dart';
 import 'src/utils/utils.dart';
 
 void main() async {
@@ -25,8 +25,10 @@ void main() async {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]),
     AppPrefs.instance.initialize(),
     initEasyLocalization(),
-    Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform),
-    initPlatformState(),
+    if (!Platform.isMacOS) ...[
+      Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform),
+      initPlatformState(),
+    ],
   ]);
   bloc.Bloc.observer = AppBlocObserver();
 

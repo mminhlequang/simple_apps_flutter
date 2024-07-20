@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:app/src/constants/constants.dart';
 import 'package:app/src/utils/utils.dart';
 import 'package:gap/gap.dart';
@@ -21,31 +23,33 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Widget child = LayoutBuilder(
+      builder: (context, constraints) {
+        return Scaffold(
+          backgroundColor: appColorBackground,
+          bottomNavigationBar: _WidgetBottomNavBar(
+            indexSelected: indexSelected,
+            indexChanged: (value) {
+              setState(() {
+                indexSelected = value;
+              });
+            },
+          ),
+          body: AnimatedSwitcher(
+            duration: const Duration(milliseconds: 200),
+            child: [
+              // const WidgetBestCollection(),
+              const ExploreScreen(),
+              const FavoritesScreen(),
+              const SettingsScreen()
+            ][indexSelected],
+          ),
+        );
+      },
+    );
+    if (Platform.isMacOS) return child;
     return WidgetRedirectByUrlConfig(
-      child: LayoutBuilder(
-        builder: (context, constraints) {
-          return Scaffold(
-            backgroundColor: appColorBackground,
-            bottomNavigationBar: _WidgetBottomNavBar(
-              indexSelected: indexSelected,
-              indexChanged: (value) {
-                setState(() {
-                  indexSelected = value;
-                });
-              },
-            ),
-            body: AnimatedSwitcher(
-              duration: const Duration(milliseconds: 200),
-              child: [
-                // const WidgetBestCollection(),
-                const ExploreScreen(),
-                const FavoritesScreen(),
-                const SettingsScreen()
-              ][indexSelected],
-            ),
-          );
-        },
-      ),
+      child: child,
     );
   }
 }
