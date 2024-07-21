@@ -94,4 +94,4 @@ flutter:
     - assets/l10n/
     - assets/jsons/
     - assets/images/svg/ 
-    - assets/images/weathers/ 
+    - assets/images/svg/languages/ 

@@ -41,9 +41,7 @@ class _WidgetCardItemState extends State<WidgetCardItem> {
           pushWidget(child: WidgetCardDetail(data: widget.data), opaque: false);
         },
         child: Container(
-          decoration: const BoxDecoration(
-            color: Colors.white
-          ),
+          decoration: const BoxDecoration(color: Colors.white),
           child: Column(
             children: [
               Stack(
@@ -53,9 +51,10 @@ class _WidgetCardItemState extends State<WidgetCardItem> {
                     padding: const EdgeInsets.all(16.0),
                     child: Hero(
                       tag: widget.data.imagePath,
-                      child: Image.asset(
-                        "assets/images/weathers/${widget.data.imagePath}",
+                      child: WidgetAppSVG(
+                        "assets/images/svg/languages/language_${widget.data.imagePath}",
                         fit: BoxFit.fitWidth,
+                        width: 180,
                       ),
                     ),
                   ),
@@ -138,16 +137,16 @@ class CardData {
   final String description;
   final String exampleSentence1;
   final String exampleSentence2;
-  final String funFact;
+  final String? funFact;
   CardData(
     this.text,
     this.imagePath,
     this.pronunciation,
     this.description,
     this.exampleSentence1,
-    this.exampleSentence2,
+    this.exampleSentence2, [
     this.funFact,
-  );
+  ]);
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{

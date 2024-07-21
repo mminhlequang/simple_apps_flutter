@@ -55,9 +55,10 @@ class _WidgetCardDetailState extends State<WidgetCardDetail> {
                         padding: const EdgeInsets.all(16.0),
                         child: Hero(
                           tag: widget.data.imagePath,
-                          child: Image.asset(
-                            "assets/images/weathers/${widget.data.imagePath}",
+                          child: WidgetAppSVG(
+                            "assets/images/svg/languages/language_${widget.data.imagePath}",
                             fit: BoxFit.fitWidth,
+                            width: 220,
                           ),
                         ),
                       ),
@@ -100,14 +101,16 @@ class _WidgetCardDetailState extends State<WidgetCardDetail> {
                           color: color,
                         ),
                       ),
-                      const SizedBox(height: 8),
-                      Text(
-                        "Fun fact:\n- ${widget.data.funFact}",
-                        style: w400TextStyle(
-                          fontSize: 18.sw,
-                          color: color,
+                      if (widget.data.funFact != null) ...[
+                        const SizedBox(height: 8),
+                        Text(
+                          "Fun fact:\n- ${widget.data.funFact}",
+                          style: w400TextStyle(
+                            fontSize: 18.sw,
+                            color: color,
+                          ),
                         ),
-                      ),
+                      ],
                       const SizedBox(height: 32),
                     ],
                   ),

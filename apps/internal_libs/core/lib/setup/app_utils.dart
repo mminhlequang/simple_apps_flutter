@@ -7,10 +7,21 @@ import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import 'package:logger/logger.dart'; 
 
-int intInRange(int min, int max) => min + Random().nextInt(max - min);
+final Random random = Random();
+List<Color> textColors = [
+  hexColor('#34495E'),
+  hexColor('#515A5A'),
+  hexColor('#283747'),
+  hexColor('#17202A')
+];
+Color getRandomColor() {
+  return textColors[random.nextInt(textColors.length)];
+}
+
+int intInRange(int min, int max) => min + random.nextInt(max - min);
 
 double doubleInRange(num start, num end) =>
-    Random().nextDouble() * (end - start) + start;
+    random.nextDouble() * (end - start) + start;
 
 void appHaptic() {
   HapticFeedback.lightImpact();
