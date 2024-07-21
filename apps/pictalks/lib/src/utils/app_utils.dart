@@ -10,51 +10,7 @@ import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 
 import 'utils.dart';
-
-Color getRandomColor() {
-  final Random random = Random();
-  return Color.fromARGB(
-    255, // Alpha value (255 is fully opaque)
-    random.nextInt(256), // Red value
-    random.nextInt(256), // Green value
-    random.nextInt(256), // Blue value
-  );
-}
-
-Future<bool?> nsfwWarningDialog() async => await showCupertinoDialog<bool>(
-      context: appContext,
-      builder: (context) => CupertinoAlertDialog(
-        title: Text(
-          'NSFW content is intended for users over 18 years of age only\n'.tr(),
-          style: w500TextStyle(fontSize: 16.sw, height: 1.4),
-        ),
-        content: Text(
-          'Please confirm that you are of age and accept full responsibility for continuing'
-              .tr(),
-          style: w400TextStyle(
-              fontSize: 15.sw,
-              height: 1.4,
-              color: appColorText.withOpacity(.8)),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: Text(
-              'Cancel'.tr(),
-              style: w500TextStyle(fontSize: 16.sw, height: 1.4),
-            ),
-          ),
-          TextButton(
-            onPressed: () => Navigator.pop(context, true),
-            child: Text(
-              'Yes'.tr(),
-              style: w500TextStyle(fontSize: 16.sw, height: 1.4),
-            ),
-          ),
-        ],
-      ),
-    );
-
+ 
 bool get isMobile => Platform.isIOS || Platform.isAndroid;
 
 String stringShareImage(url) =>

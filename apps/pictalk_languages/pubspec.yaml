@@ -1,5 +1,5 @@
 name: app
-description: PicTalk Weathers 
+description: PicTalk Languages 
 
 version: 1.0.0+1
 
@@ -69,13 +69,13 @@ flutter_icons:
   image_path: "assets/logo.png"
   #android 
   adaptive_icon_foreground: "assets/logo2.png"
-  adaptive_icon_background: "#F2F2F2"
+  adaptive_icon_background: "#FFFBF8"
   macos:
     generate: true
     image_path: "assets/logo.png"
 
 flutter_native_splash:
-  color: "#F2F2F2"
+  color: "#FFFBF8"
   image: assets/logo2.png
   web: false
   

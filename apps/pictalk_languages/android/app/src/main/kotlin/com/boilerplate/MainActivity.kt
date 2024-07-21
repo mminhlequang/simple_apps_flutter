@@ -1,4 +1,4 @@
-package com.mminhlequang.pictalkweathers
+package com.mminhlequang.pictalklanguages
 
 import io.flutter.embedding.android.FlutterActivity
 

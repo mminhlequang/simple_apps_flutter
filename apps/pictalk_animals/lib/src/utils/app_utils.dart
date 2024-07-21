@@ -9,17 +9,7 @@ import 'package:go_router/go_router.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 
-import 'utils.dart';
-
-Color getRandomColor() {
-  final Random random = Random();
-  return Color.fromARGB(
-    255, // Alpha value (255 is fully opaque)
-    random.nextInt(256), // Red value
-    random.nextInt(256), // Green value
-    random.nextInt(256), // Blue value
-  );
-}
+import 'utils.dart'; 
 
 Future<bool?> nsfwWarningDialog() async => await showCupertinoDialog<bool>(
       context: appContext,

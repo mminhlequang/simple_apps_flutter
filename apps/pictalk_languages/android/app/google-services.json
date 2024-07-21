@@ -7,9 +7,47 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:319437602723:android:5db726155c5d8ed987a416",
+        "mobilesdk_app_id": "1:319437602723:android:bebe872b0848fb4c87a416",
         "android_client_info": {
-          "package_name": "com.mminhlequang.pictalkbirds"
+          "package_name": "com.app.mypuzzlehack"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCixX_R6yIqmhu0-O6xoL5pj8MErNg23f0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319437602723:android:8ffcd18e4c82758487a416",
+        "android_client_info": {
+          "package_name": "com.app.myrealpuzzle"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCixX_R6yIqmhu0-O6xoL5pj8MErNg23f0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319437602723:android:84cb1dcb16eddad187a416",
+        "android_client_info": {
+          "package_name": "com.mminhlequang.pictalkbirds2"
         }
       },
       "oauth_client": [],
@@ -29,6 +67,25 @@
         "mobilesdk_app_id": "1:319437602723:android:e5506daf05ce582587a416",
         "android_client_info": {
           "package_name": "com.mminhlequang.pictalkemojis"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCixX_R6yIqmhu0-O6xoL5pj8MErNg23f0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319437602723:android:4302a6bb3ec7a53687a416",
+        "android_client_info": {
+          "package_name": "com.mminhlequang.pictalkflags"
         }
       },
       "oauth_client": [],
@@ -67,6 +124,25 @@
         "mobilesdk_app_id": "1:319437602723:android:d2b4912bbbbb149f87a416",
         "android_client_info": {
           "package_name": "com.mminhlequang.pictalkjobs"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCixX_R6yIqmhu0-O6xoL5pj8MErNg23f0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319437602723:android:d8b2fbdd997ad24587a416",
+        "android_client_info": {
+          "package_name": "com.mminhlequang.pictalklanguages"
         }
       },
       "oauth_client": [],

@@ -40,7 +40,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       ),
                       Gap(2.sw),
                       Text(
-                        'PicTalk: Weathers',
+                        'PicTalk: Languages',
                         style: w300TextStyle(fontSize: 12.sw),
                       ),
                     ],

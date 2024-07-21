@@ -1,1 +1,1 @@
-const String appName = "PicTalk: Weathers";
+const String appName = "PicTalk: Languages";

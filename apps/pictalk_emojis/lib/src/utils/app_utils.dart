@@ -11,16 +11,6 @@ import 'package:flutter/material.dart';
 
 import 'utils.dart';
 
-Color getRandomColor() {
-  final Random random = Random();
-  return Color.fromARGB(
-    255, // Alpha value (255 is fully opaque)
-    random.nextInt(256), // Red value
-    random.nextInt(256), // Green value
-    random.nextInt(256), // Blue value
-  );
-}
-
 Future<bool?> nsfwWarningDialog() async => await showCupertinoDialog<bool>(
       context: appContext,
       builder: (context) => CupertinoAlertDialog(

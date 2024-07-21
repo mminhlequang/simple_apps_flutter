@@ -2,15 +2,15 @@
 
 ## App Configs:
 
-#### TitlePage1: Explore Weathers
+#### TitlePage1: Explore Languages
 #### SubTitlePage1: List collection
 
 #### TitlePage2: Your favorites
-#### SubTitlePage2: Saved impressive Weathers
+#### SubTitlePage2: Saved impressive Languages
 
-#### AppName: PicTalk: Weathers
-#### AppID: com.mminhlequang.pictalkweathers
+#### AppName: PicTalk: Languages
+#### AppID: com.mminhlequang.pictalklanguages
 #### PackageName: app
-#### PackageDesc: PicTalk Weathers
+#### PackageDesc: PicTalk Languages
 
-#### Background Color: F2F2F2
+#### Background Color: FFFBF8

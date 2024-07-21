@@ -11,7 +11,6 @@ import 'package:flutter/material.dart';
 
 import 'utils.dart';
 
-
 Future<bool?> nsfwWarningDialog() async => await showCupertinoDialog<bool>(
       context: appContext,
       builder: (context) => CupertinoAlertDialog(
@@ -49,7 +48,7 @@ Future<bool?> nsfwWarningDialog() async => await showCupertinoDialog<bool>(
 bool get isMobile => Platform.isIOS || Platform.isAndroid;
 
 String stringShareImage(url) =>
-    '"PicTalk: Weathers"\n${"I want share to you this image:".tr()} $url\n${"You can view more at:".tr()} ${Platform.isAndroid ? "https://play.google.com/store/apps/details?id=com.mminhlequang.pictalkweathers" : "https://apps.apple.com/us/app/dreamart-ai/id6480363700?platform=iphone"}';
+    '"PicTalk: Languages"\n${"I want share to you this image:".tr()} $url\n${"You can view more at:".tr()} ${Platform.isAndroid ? "https://play.google.com/store/apps/details?id=com.mminhlequang.pictalklanguages" : "https://apps.apple.com/us/app/dreamart-ai/id6480363700?platform=iphone"}';
 
 onOpenImage({
   bool isExploreList = false,

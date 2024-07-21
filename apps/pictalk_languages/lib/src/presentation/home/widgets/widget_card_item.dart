@@ -30,100 +30,104 @@ class _WidgetCardItemState extends State<WidgetCardItem> {
   @override
   Widget build(BuildContext context) {
     Color color = getRandomColor();
-    return Card(
-      elevation: 10,
-      margin: EdgeInsets.zero,
-      shadowColor: color.withOpacity(.2),
-      child: InkWell(
-        onTap: () {
-          appHaptic();
-          _speak();
-          pushWidget(child: WidgetCardDetail(data: widget.data), opaque: false);
-        },
-        child: Container(
-          decoration: const BoxDecoration(color: Colors.white),
-          child: Column(
-            children: [
-              Stack(
-                alignment: Alignment.topRight,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Hero(
-                      tag: widget.data.imagePath,
-                      child: WidgetAppSVG(
-                        "assets/images/svg/languages/language_${widget.data.imagePath}",
-                        fit: BoxFit.fitWidth,
-                        width: 180,
-                      ),
+    return GestureDetector(
+      onTap: () {
+        appHaptic();
+        _speak();
+        pushWidget(child: WidgetCardDetail(data: widget.data), opaque: false);
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12.sw),
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: color.withOpacity(.1),
+              blurRadius: 12.sw,
+            )
+          ],
+        ),
+        child: Column(
+          children: [
+            Stack(
+              alignment: Alignment.topRight,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Hero(
+                    tag: widget.data.imagePath,
+                    child: WidgetAppSVG(
+                      "assets/images/svg/languages/language_${widget.data.imagePath}",
+                      fit: BoxFit.fitWidth,
+                      width: 180,
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: StreamBuilder(
-                        stream: AppPrefs.instance.watch("favoriteItems"),
-                        builder: (context, snapshot) {
-                          return WidgetFloatIconButton(
-                            onTap: () {
-                              appHaptic();
-                              // if (favoriteCubit.state.isFavorited(widget.m)) {
-                              //   favoriteCubit.removeToFavorite(widget.m);
-                              // } else {
-                              //   favoriteCubit.addToFavorite(widget.m);
-                              // }
-                              var items = AppPrefs.instance.favoriteItems ?? [];
-                              if (AppPrefs.instance.favoriteItems?.any((e) =>
-                                      e.imagePath == widget.data.imagePath) ==
-                                  true) {
-                                items.removeWhere((e) =>
-                                    e.imagePath == widget.data.imagePath);
-                              } else {
-                                items.insert(0, widget.data);
-                              }
-                              AppPrefs.instance.favoriteItems = items;
-                            },
-                            icon: 'like',
-                            color: AppPrefs.instance.favoriteItems?.any((e) =>
-                                        e.imagePath == widget.data.imagePath) ==
-                                    true
-                                ? appColorPrimary
-                                : Colors.white,
-                          );
-                        }),
-                  )
-                ],
-              ),
-              const SizedBox(height: 8),
-              Text(
-                "`${widget.data.pronunciation}`",
-                style: w300TextStyle(
-                  fontSize: 14.sw,
-                  color: color,
                 ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: StreamBuilder(
+                      stream: AppPrefs.instance.watch("favoriteItems"),
+                      builder: (context, snapshot) {
+                        return WidgetFloatIconButton(
+                          onTap: () {
+                            appHaptic();
+                            // if (favoriteCubit.state.isFavorited(widget.m)) {
+                            //   favoriteCubit.removeToFavorite(widget.m);
+                            // } else {
+                            //   favoriteCubit.addToFavorite(widget.m);
+                            // }
+                            var items = AppPrefs.instance.favoriteItems ?? [];
+                            if (AppPrefs.instance.favoriteItems?.any((e) =>
+                                    e.imagePath == widget.data.imagePath) ==
+                                true) {
+                              items.removeWhere(
+                                  (e) => e.imagePath == widget.data.imagePath);
+                            } else {
+                              items.insert(0, widget.data);
+                            }
+                            AppPrefs.instance.favoriteItems = items;
+                          },
+                          icon: 'like',
+                          color: AppPrefs.instance.favoriteItems?.any((e) =>
+                                      e.imagePath == widget.data.imagePath) ==
+                                  true
+                              ? appColorPrimary
+                              : Colors.white,
+                        );
+                      }),
+                )
+              ],
+            ),
+            const SizedBox(height: 8),
+            Text(
+              "`${widget.data.pronunciation}`",
+              style: w300TextStyle(
+                fontSize: 14.sw,
+                color: color,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    widget.data.text,
-                    style: TextStyle(
-                      fontSize: 18.sw, // Responsive text size
-                      fontWeight: FontWeight.bold,
-                      color: color,
-                    ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  widget.data.text,
+                  style: TextStyle(
+                    fontSize: 18.sw, // Responsive text size
+                    fontWeight: FontWeight.bold,
+                    color: color,
                   ),
-                  IconButton(
-                    icon: Icon(
-                      Icons.volume_up,
-                      color: color,
-                      size: 32,
-                    ),
-                    onPressed: _speak,
+                ),
+                IconButton(
+                  icon: Icon(
+                    Icons.volume_up,
+                    color: color,
+                    size: 32,
                   ),
-                ],
-              ),
-            ],
-          ),
+                  onPressed: _speak,
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
@@ -168,7 +172,7 @@ class CardData {
       map['description'] as String,
       map['exampleSentence1'] as String,
       map['exampleSentence2'] as String,
-      map['funFact'] as String,
+      map['funFact'] as String?,
     );
   }
 

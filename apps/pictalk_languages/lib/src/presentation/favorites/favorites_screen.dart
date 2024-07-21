@@ -40,7 +40,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                             ),
                             Gap(2.sw),
                             Text(
-                              'Saved impressive Weathers'.tr(),
+                              'Saved impressive Languages'.tr(),
                               style: w300TextStyle(fontSize: 12.sw),
                             ),
                           ],
