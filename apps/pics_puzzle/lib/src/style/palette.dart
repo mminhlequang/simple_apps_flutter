@@ -23,9 +23,9 @@ import 'package:flutter/material.dart';
 /// we could allow players to customize colors, for example,
 /// or even get the colors from the network.
 class Palette {
-  Color get backgroundMain => hexColor('3DC2EC');
+  Color get backgroundMain => hexColor('FBF5B9');
 
-  Color get textColor => hexColor('402E7A');
+  Color get textColor => hexColor('A02D00');
 
   Color get btnOkColor => hexColor('F2613F');
 
