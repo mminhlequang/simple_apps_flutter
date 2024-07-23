@@ -4,16 +4,12 @@
 
 import 'dart:io';
 
-import 'package:app/firebase_options.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:internal_core/device_infos.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:app/src/loading_selection/loading_selection_screen.dart';
-import 'package:app/src/settings/about_screen.dart';
 import 'package:app/src/utils/sp_util.dart';
 import 'package:go_router/go_router.dart';
 import 'package:logging/logging.dart';
@@ -49,8 +45,6 @@ Future<void> main() async {
   ]);
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge, overlays: []);
 
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  await initPlatformState();
 
   if (!kIsWeb && (Platform.isIOS || Platform.isAndroid)) {
     /// Prepare the google_mobile_ads plugin so that the first ad loads

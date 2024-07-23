@@ -37,9 +37,6 @@ dependencies:
   connectivity_plus: ^6.0.3
 #  mixpanel_flutter: ^2.0.0
 
-  internal_core: 
-    path: ../internal_libs/core
-
 
 dev_dependencies:
   flutter_native_splash: ^2.4.1
