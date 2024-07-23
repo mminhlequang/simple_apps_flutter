@@ -106,26 +106,24 @@ class _WidgetCardItemState extends State<WidgetCardItem> {
                 color: color,
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  widget.data.text,
-                  style: TextStyle(
-                    fontSize: 18.sw, // Responsive text size
-                    fontWeight: FontWeight.bold,
-                    color: color,
-                  ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12),
+              child: Text(
+                widget.data.text,
+                style: TextStyle(
+                  fontSize: 18.sw, // Responsive text size
+                  fontWeight: FontWeight.bold,
+                  color: color,
                 ),
-                IconButton(
-                  icon: Icon(
-                    Icons.volume_up,
-                    color: color,
-                    size: 32,
-                  ),
-                  onPressed: _speak,
-                ),
-              ],
+              ),
+            ),
+            IconButton(
+              icon: Icon(
+                Icons.volume_up,
+                color: color,
+                size: 32,
+              ),
+              onPressed: _speak,
             ),
           ],
         ),

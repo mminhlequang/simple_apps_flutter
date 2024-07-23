@@ -26,10 +26,10 @@ void main() async {
     AppPrefs.instance.initialize(),
     initEasyLocalization(),
     Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform),
+    initPlatformState(),
   ]);
   bloc.Bloc.observer = AppBlocObserver();
 
-  await initPlatformState();
   internalSetup();
   getItSetup();
 

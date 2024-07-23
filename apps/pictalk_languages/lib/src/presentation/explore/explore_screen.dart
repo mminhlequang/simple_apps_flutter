@@ -231,20 +231,6 @@ var cardList = [
       "American English has many regional dialects.",
       "It is the primary language in the United States."),
   CardData(
-      "Esperanto",
-      "eo.svg",
-      "ˌɛspəˈræntoʊ",
-      "A constructed international auxiliary language.",
-      "Esperanto was created by L. L. Zamenhof.",
-      "It is the most widely spoken constructed language."),
-  CardData(
-      "Spanish (Spain)",
-      "es_es.svg",
-      "ˈspænɪʃ (speɪn)",
-      "A variant of Spanish spoken in Spain.",
-      "Spanish is a Romance language.",
-      "It has many regional dialects in Spain."),
-  CardData(
       "Spanish",
       "es.svg",
       "ˈspænɪʃ",
@@ -260,13 +246,6 @@ var cardList = [
       "A language spoken in the Basque Country.",
       "Basque is a language isolate.",
       "It is not related to any other known language."),
-  CardData(
-      "Ewe",
-      "ee.svg",
-      "ˈeɪweɪ",
-      "A language spoken in Ghana and Togo.",
-      "Ewe is a Niger-Congo language.",
-      "It is part of the Gbe language family."),
   CardData(
       "Faroese",
       "fo.svg",
@@ -298,26 +277,12 @@ var cardList = [
       "French is a Romance language.",
       "It is one of the most widely spoken languages in the world."),
   CardData(
-      "Frisian",
-      "fy.svg",
-      "ˈfriːʒən",
-      "A language spoken in the Netherlands and Germany.",
-      "Frisian is a West Germanic language.",
-      "It is closely related to English."),
-  CardData(
       "Irish",
       "ga.svg",
       "ˈaɪərɪʃ",
       "A language spoken in Ireland.",
       "Irish is a Goidelic language.",
       "It is one of the official languages of Ireland."),
-  CardData(
-      "Scottish Gaelic",
-      "gd.svg",
-      "ˈɡælɪk",
-      "A language spoken in Scotland.",
-      "Scottish Gaelic is a Goidelic language.",
-      "It is a minority language in Scotland."),
   CardData(
       "Galician",
       "gl.svg",
@@ -368,13 +333,6 @@ var cardList = [
       "Hindi is an Indo-Aryan language.",
       "It is one of the official languages of India."),
   CardData(
-      "Hmong",
-      "hmn.svg",
-      "hmɔŋ",
-      "A language spoken in China, Vietnam, Laos, and Thailand.",
-      "Hmong is a Hmong-Mien language.",
-      "It has many dialects."),
-  CardData(
       "Hungarian",
       "hu.svg",
       "ˈhʌŋɡəriən",
@@ -409,13 +367,6 @@ var cardList = [
       "A language spoken in the Philippines.",
       "Iloko is an Austronesian language.",
       "It is spoken in the northern regions of the Philippines."),
-  CardData(
-      "Icelandic",
-      "is.svg",
-      "aɪsˈlændɪk",
-      "A language spoken in Iceland.",
-      "Icelandic is a North Germanic language.",
-      "It has changed very little over the centuries."),
   CardData("Italian", "it.svg", "ɪˈtæliən", "A language spoken in Italy.",
       "Italian is a Romance language.", "It is known for its musicality."),
   CardData(
@@ -586,15 +537,6 @@ var cardList = [
       "Nyanja is a Bantu language.",
       "It is also known as Chichewa."),
   CardData(
-      "Occitan",
-      "oc.svg",
-      "ˈɒksɪˌtæn",
-      "A language spoken in southern France.",
-      "Occitan is a Romance language.",
-      "It has several dialects."),
-  CardData("Oriya", "or.svg", "oʊˈraɪə", "A language spoken in Odisha, India.",
-      "Oriya is an Indo-Aryan language.", "It uses the Odia script."),
-  CardData(
       "Panjabi",
       "pa.svg",
       "ˈpʌndʒɑːbi",
@@ -617,20 +559,6 @@ var cardList = [
       "A language spoken in Portugal and Brazil.",
       "Portuguese is a Romance language.",
       "It is the official language of several countries."),
-  CardData(
-      "Quechua",
-      "qu.svg",
-      "ˈkɛtʃwə",
-      "A language spoken in the Andes region.",
-      "Quechua is a Native American language.",
-      "It was the language of the Inca Empire."),
-  CardData(
-      "Romansh",
-      "rm.svg",
-      "roʊˈmænʃ",
-      "A language spoken in Switzerland.",
-      "Romansh is a Romance language.",
-      "It is one of the official languages of Switzerland."),
   CardData("Kirundi", "rn.svg", "kɪˈrʌndi", "A language spoken in Burundi.",
       "Kirundi is a Bantu language.", "It is closely related to Kinyarwanda."),
   CardData(
@@ -655,26 +583,12 @@ var cardList = [
       "Kinyarwanda is a Bantu language.",
       "It is one of the official languages of Rwanda."),
   CardData(
-      "Sanskrit",
-      "sa.svg",
-      "ˈsænskrɪt",
-      "An ancient language of India.",
-      "Sanskrit is an Indo-Aryan language.",
-      "It is the liturgical language of Hinduism."),
-  CardData(
       "Sindhi",
       "sd.svg",
       "ˈsɪndi",
       "A language spoken in Sindh, Pakistan.",
       "Sindhi is an Indo-Aryan language.",
       "It uses the Arabic script."),
-  CardData(
-      "Northern Sotho",
-      "se.svg",
-      "ˈsoʊtoʊ",
-      "A language spoken in South Africa.",
-      "Northern Sotho is a Bantu language.",
-      "It is one of the official languages of South Africa."),
   CardData("Sinhala", "si.svg", "ˈsɪnhələ", "A language spoken in Sri Lanka.",
       "Sinhala is an Indo-Aryan language.", "It uses the Sinhala script."),
   CardData("Slovak", "sk.svg", "ˈsloʊvæk", "A language spoken in Slovakia.",
@@ -747,13 +661,6 @@ var cardList = [
       "Tamil is a Dravidian language.",
       "It has its own script."),
   CardData(
-      "Tatar",
-      "tt.svg",
-      "tɑːˈtɑːr",
-      "A language spoken in Tatarstan, Russia.",
-      "Tatar is a Turkic language.",
-      "It uses the Cyrillic script."),
-  CardData(
       "Telugu",
       "te.svg",
       "ˈtɛlʊɡuː",
@@ -764,13 +671,6 @@ var cardList = [
       "Tajik is an Indo-Iranian language.", "It uses the Cyrillic script."),
   CardData("Thai", "th.svg", "taɪ", "A language spoken in Thailand.",
       "Thai is a Kra-Dai language.", "It has its own script."),
-  CardData(
-      "Tigrinya",
-      "ti.svg",
-      "tɪˈɡrɪnjə",
-      "A language spoken in Eritrea and Ethiopia.",
-      "Tigrinya is a Semitic language.",
-      "It uses the Ge'ez script."),
   CardData(
       "Turkmen",
       "tk.svg",
@@ -799,20 +699,7 @@ var cardList = [
       "A language spoken in Botswana and South Africa.",
       "Tswana is a Bantu language.",
       "It is one of the official languages of Botswana."),
-  CardData(
-      "Tatar",
-      "tt.svg",
-      "tɑːˈtɑːr",
-      "A language spoken in Tatarstan, Russia.",
-      "Tatar is a Turkic language.",
-      "It uses the Cyrillic script."),
-  CardData(
-      "Uyghur",
-      "ug.svg",
-      "ˈwiːɡər",
-      "A language spoken in Xinjiang, China.",
-      "Uyghur is a Turkic language.",
-      "It uses the Arabic script."),
+   
   CardData(
       "Ukrainian",
       "uk.svg",
@@ -1188,13 +1075,6 @@ var cardList = [
       "Albanian is an Indo-European language.",
       "It is the official language of Albania."),
   CardData(
-      "Serbo-Croatian",
-      "sh.svg",
-      "Serbo-Croatian",
-      "A South Slavic language spoken in the former Yugoslavia.",
-      "Serbo-Croatian is a South Slavic language.",
-      "It is used in Serbia, Croatia, Bosnia and Herzegovina, and Montenegro."),
-  CardData(
       "Sundanese",
       "su.svg",
       "Sundanese",
@@ -1238,13 +1118,7 @@ var cardList = [
       "A language spoken in Thailand.",
       "Thai is a Kra-Dai language.",
       "It is the official language of Thailand."),
-  CardData(
-      "Tigrinya",
-      "ti.svg",
-      "Tigrinya",
-      "A language spoken in Eritrea and Ethiopia.",
-      "Tigrinya is a Semitic language.",
-      "It is one of the official languages of Eritrea."),
+   
   CardData(
       "Turkmen",
       "tk.svg",
@@ -1297,33 +1171,12 @@ var cardList = [
       "Uzbek is a Turkic language.",
       "It is the official language of Uzbekistan."),
   CardData(
-      "Venda",
-      "ve.svg",
-      "Venda",
-      "A language spoken in South Africa.",
-      "Venda is a Bantu language.",
-      "It is one of the eleven official languages of South Africa."),
-  CardData(
       "Vietnamese",
       "vi.svg",
       "Vietnamese",
       "A language spoken in Vietnam.",
       "Vietnamese is an Austroasiatic language.",
       "It is the official language of Vietnam."),
-  CardData(
-      "Walloon",
-      "wa.svg",
-      "Walloon",
-      "A language spoken in Belgium.",
-      "Walloon is a Romance language.",
-      "It is spoken in the Wallonia region of Belgium."),
-  CardData(
-      "Wolof",
-      "wo.svg",
-      "Wolof",
-      "A language spoken in Senegal.",
-      "Wolof is a Niger-Congo language.",
-      "It is one of the national languages of Senegal."),
   CardData(
       "Xhosa",
       "xh.svg",
