@@ -76,7 +76,11 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
             onPressed: () {
               GoRouter.of(context).push('/settings');
             },
-            icon: Icon(Icons.settings)),
+            icon: Icon(
+              Icons.settings,
+              size: 28  ,
+              color: palette.textColor,
+            )),
         centerTitle: true,
         backgroundColor: palette.backgroundMain,
         title: Text(
@@ -89,6 +93,10 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
           width: 0.9.sw,
           child: CustomScrollView(
             slivers: [
+              SliverToBoxAdapter(
+                  child: SizedBox(
+                height: 16,
+              )),
               buildPagedGridView(),
               SliverToBoxAdapter(
                   child: SizedBox(
@@ -107,11 +115,15 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
       showNewPageErrorIndicatorAsGridChild: false,
       showNoMoreItemsIndicatorAsGridChild: true,
       pagingController: _pagingController,
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         childAspectRatio: 50 / 33,
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
-        crossAxisCount: 2,
+        crossAxisCount: MediaQuery.sizeOf(context).width > 600
+            ? 4
+            : MediaQuery.sizeOf(context).width > 400
+                ? 3
+                : 2,
       ),
       builderDelegate: PagedChildBuilderDelegate<JigsawInfo>(
         itemBuilder: (context, item, index) => JigsawGridItem(
@@ -218,7 +230,7 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
       },
       child: Container(
         width: 100,
-        padding: EdgeInsets.only(left: 20.w, right: 20.w),
+        padding: EdgeInsets.only(left: 20, right: 20),
         margin: EdgeInsets.only(left: 8.w, right: 8.w),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
@@ -232,8 +244,8 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
             // Radio(value: num, groupValue: _gridSizeValue, onChanged: (value) {f(value);}),
             Text("${num * num}",
                 style: TextStyle(
-                    fontWeight: FontWeight.w200,
-                    fontSize: 26.sp,
+                    fontWeight: FontWeight.w300,
+                    fontSize: 26,
                     color: Colors.white)),
             // return ListTile(
             //     title: Container(width:30.w,height:20.h,child: Text("${num * num}")),
