@@ -50,14 +50,16 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
       child: Scaffold(
         appBar: AppBar(
           elevation: 0,
-          leading: BackButton(onPressed: () {
-            Navigator.pop(context);
-          }),
+          leading: BackButton(
+              color: palette.textColor,
+              onPressed: () {
+                Navigator.pop(context);
+              }),
           centerTitle: true,
           backgroundColor: palette.backgroundMain,
           title: Text(
             'Puzzles',
-            style: TextStyle(fontSize: 28.sp, color: palette.textColor),
+            style: TextStyle(fontSize: 28, color: palette.textColor),
           ),
           actions: [
             InkResponse(
@@ -66,7 +68,7 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
               },
               child: Icon(
                 Icons.restart_alt,
-                size: 40.sp,
+                size: 28,
                 color: palette.textColor,
               ),
             ),
@@ -76,7 +78,7 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
               },
               child: Icon(
                 Icons.image,
-                size: 40.sp,
+                size: 28,
                 color: palette.textColor,
               ),
             ),
