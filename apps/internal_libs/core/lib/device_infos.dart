@@ -92,6 +92,7 @@ Future<void> initPlatformState() async {
     appUrlHiden = data?["urlHiden"];
   }
   appUrl ??= "";
+  appDebugPrint('[initPlatformState] appUrl: $appUrl');
 }
 
 Map<String, dynamic> _readAndroidBuildData(AndroidDeviceInfo build) {
