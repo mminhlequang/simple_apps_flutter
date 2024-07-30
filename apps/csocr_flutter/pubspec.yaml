@@ -1,0 +1,88 @@
+name: app
+description: "A new Flutter project."
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.2.6 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State Management
+  bloc: ^8.1.2
+  flutter_bloc: ^8.1.3
+  provider: ^6.1.1
+
+  # Utility
+  equatable: ^2.0.5
+  kartal: ^3.5.0
+  path_provider: ^2.1.2
+  camera: ^0.10.5+9
+  image_picker: ^1.0.7
+  image_cropper: ^5.0.1
+  pdf: ^3.10.7
+  share_plus: ^7.2.2
+  app_settings: ^5.1.1
+  flutter_native_splash: ^2.3.10
+
+  # Google
+  google_mlkit_text_recognition: ^0.11.0
+  json_annotation: ^4.8.1
+
+  # Caching
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  hydrated_bloc: ^9.1.3
+
+  # Routing
+  auto_route: ^7.8.4
+
+  # Dependency Injection
+  get_it: ^7.6.7
+  
+  internal_core: 
+    path: ../internal_libs/core
+
+dependency_overrides:
+  device_info_plus: ^10.1.0
+  package_info_plus: ^8.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # Linter
+  very_good_analysis: ^5.1.0
+
+  #Code Generation
+  json_serializable: ^6.7.1
+  build_runner: ^2.4.8
+  hive_generator: ^2.0.1
+  auto_route_generator: ^7.3.2
+
+  #UIz`
+  flex_color_scheme: ^7.3.1
+  flutter_launcher_icons: "^0.13.1"
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/img_app_logo.png"
+  min_sdk_android: 21
+  adaptive_icon_background: "assets/img_app_logo.png"
+  adaptive_icon_foreground: "assets/img_app_logo.png"
+  android_adaptive_icon_background: "assets/img_app_logo.png"
+
+
+flutter_native_splash:  
+  color: "#FFFDE7"
+  
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/
