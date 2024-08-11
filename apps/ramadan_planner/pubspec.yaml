@@ -1,0 +1,67 @@
+name: ramadanplanner
+version: 1.0.0+1
+publish_to: none
+description: A new Flutter project.
+environment: 
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies: 
+  cupertino_icons: ^1.0.8
+  get: ^4.6.6
+  flutter: 
+    sdk: flutter
+  sizer: ^2.0.15
+  google_fonts: ^6.2.1
+
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  hijri: ^3.0.0
+  permission_handler: ^11.3.1  
+  daynightbanner: ^0.0.2
+  adhan: ^2.0.0+1
+  intl: ^0.19.0
+
+  internal_core: 
+    path: ../internal_libs/core
+
+dev_dependencies: 
+  flutter_lints: ^4.0.0   
+  hive_generator: ^2.0.1
+  build_runner: ^2.4.12
+  flutter_launcher_icons: ^0.13.1
+  flutter_test: 
+    sdk: flutter
+    
+flutter_icons:
+  android: "ic_launcher"
+  ios: true
+  #ios
+  image_path: "assets/logo.png"
+
+flutter: 
+  assets: 
+    - assets/images/
+    - assets/json/
+    - assets/sound/notification.mp3
+    
+  uses-material-design: true
+
+  fonts: 
+    - family: Li
+      fonts: 
+        - asset: assets/font/Li.ttf
+          weight: 700
+    - family: Tuli
+      fonts: 
+        - asset: assets/font/Tuli.ttf
+          weight: 400
+    - family: Lato
+      fonts: 
+        - asset: assets/font/Lato-Regular.ttf
+          weight: 400
+    
+    - family: arbi
+      fonts: 
+        - asset: assets/font/arbi.ttf
+          weight: 400
+    

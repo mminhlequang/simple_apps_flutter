@@ -21,7 +21,7 @@ void main() async {
   await Future.wait([
     if (Platform.isAndroid)
       SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
-          overlays: [SystemUiOverlay.top]),
+          overlays: [SystemUiOverlay.top]), 
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]),
     AppPrefs.instance.initialize(),
     initEasyLocalization(),
