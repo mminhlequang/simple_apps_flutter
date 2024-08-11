@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ramadanplanner/Util/App_text.dart';
-import 'package:ramadanplanner/Util/app_colors.dart';
+import 'package:app/Util/App_text.dart';
+import 'package:app/Util/app_colors.dart';
 import 'package:sizer/sizer.dart';
 
 manuButton(String name, String com, Function()? tap) {

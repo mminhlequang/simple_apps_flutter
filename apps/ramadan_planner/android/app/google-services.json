@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "376681780522",
+    "project_id": "trashs",
+    "storage_bucket": "trashs.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:376681780522:android:05098ac96e9bd25bd93a53",
+        "android_client_info": {
+          "package_name": "com.maitai.mpramadan"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD40zPSMwQlemuvLnYp22SUcNuF8JaDfI4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

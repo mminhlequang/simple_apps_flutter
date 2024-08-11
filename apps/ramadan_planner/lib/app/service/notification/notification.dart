@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'dart:isolate';
 
 import 'package:hive_flutter/adapters.dart';
-import 'package:ramadanplanner/Util/app_colors.dart';
+import 'package:app/Util/app_colors.dart';
 // import 'package:timezone/data/latest.dart' as tz;
 // import 'package:timezone/timezone.dart' as tz;
 

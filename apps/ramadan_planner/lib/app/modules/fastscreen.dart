@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ramadanplanner/Util/app_colors.dart';
+import 'package:app/Util/app_colors.dart';
 
 class Fastpage extends StatelessWidget {
   const Fastpage({super.key});
